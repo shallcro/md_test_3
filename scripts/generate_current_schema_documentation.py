@@ -124,17 +124,17 @@ def main():
             sys.exit(1)
 
         #set up variables
-        docs_dir = os.path.join(args.source_dir, 'docs')
-        html_dir = os.path.join(docs_dir, 'html')
+        site_dir = os.path.join(args.source_dir, 'site')
+        markdown_dir = os.path.join(args.source_dir, 'markdown')
+        resource_dir = os.path.join(args.source_dir, 'resources')
         temp_dir = os.path.join(args.source_dir, 'temp')
         if not os.path.exists(temp_dir):
             os.mkdir(temp_dir)
 
-        mkdocs_yaml = os.path.join(docs_dir, 'mkdocs.yaml')
-        rtd_css = os.path.join(docs_dir, 'readthedocs_theme.css')
+        mkdocs_yaml = os.path.join(args.source_dir, 'mkdocs.yml')
+        rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
 
-        markdown_dir = os.path.join(docs_dir, 'markdown')
-
+        
         #produce a dereferenced json file
         print("\tProducing cache...")
         cache = dereference_cache(load_cache(args.source_dir))
@@ -161,7 +161,7 @@ def main():
         md_filename = os.path.basename(os.path.splitext(dereferenced_file)[0])
         md_file = os.path.join(markdown_dir, f"{md_filename}.md")
 
-        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(docs_dir, 'template', 'base.md'), dereferenced_file, md_file)
+        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(resource_dir, 'template', 'base.md'), dereferenced_file, md_file)
 
         subprocess.run(cmd, shell=True, text=True)
 
@@ -226,7 +226,7 @@ def main():
         shutil.copy(rtd_css, os.path.join(docs_dir, 'html', 'css', 'theme.css'))
 
         # #fix missing anchor tags
-        # html_files = glob(os.path.join(html_dir, '**', '*.html'), recursive=True)
+        # html_files = glob(os.path.join(site_dir, '**', '*.html'), recursive=True)
 
         # for html_file in html_files:
         #     with open(html_file, 'r', encoding='utf-8') as fi:
