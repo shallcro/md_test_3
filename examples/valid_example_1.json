@@ -1,0 +1,55 @@
+{
+  "study_title": "Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project, Kansas City, Missouri, 2014-2017",
+  "alternate_title": ["Aim4Peace"],
+  "principal_investigators": [
+    {
+      "name": "Jim Smith",
+      "affiliation": "State University",
+      "order": 1
+    },
+    {
+      "name": "Monica Jones",
+      "affiliation": "State Tech",
+      "order": 2
+    },
+    {
+      "name": "United States Department of Widgets. Office of Research",
+      "order": 3
+    }
+  ],
+  "funding_sources": [
+    {
+      "agency": "Department of Money",
+      "grant_numbers": ["USD-29281-28928"],
+      "order": 1
+    },
+    {
+      "agency": "Deep Pockets Foundation",
+      "order": 2
+    }
+  ],
+  "summary": "Lorem ipsum....",
+  "subject_terms": [
+    "art",
+    "architecture",
+    "gravy"
+  ],
+  "geographic_coverage_areas": [
+    "United States",
+    "Michigan",
+    "Detroit"
+  ],
+  "study_time_period": [
+    {
+      "start_date": "2020",
+      "end_date": "2020",
+      "description": "Spring 2020"
+    }
+  ],
+  "date_of_collection": [
+    {
+      "start_date": "2020-10-01",
+      "end_date": "2020-10-31"
+    }
+  ]
+}

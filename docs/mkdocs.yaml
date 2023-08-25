@@ -1,0 +1,10 @@
+site_name: ICPSR Curated Study Metadata Schema
+docs_dir: markdown
+site_dir: html
+markdown_extensions:
+  - tables
+  - markdown.extensions.smarty
+plugins: []
+theme:
+  name: readthedocs
+  prev_next_buttons_location: none

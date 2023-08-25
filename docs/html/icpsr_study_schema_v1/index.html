@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>ICPSR Curated Study Metadata Schema - ICPSR Curated Study Metadata Schema</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ICPSR Curated Study Metadata Schema";
+        var mkdocs_page_input_path = "icpsr_study_schema_v1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> ICPSR Curated Study Metadata Schema
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">ICPSR Curated Study Metadata Schema</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-version-required">1. Version         [Required]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-version-date-required">2. Version Date         [Required]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-original-release-date-optional">3. Original Release Date         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-study-title-required">4. Study Title         [Required]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-alternate-titles-optional">5. Alternate Titles         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-items">5.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-link-title-optional">6. Link Title         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-link-url-optional">7. Link Url         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-principal-investigators-required">8. Principal Investigators         [Required]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#81-items">8.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#811-name">8.1.1. Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#812-affiliation">8.1.2. Affiliation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#813-order">8.1.3. Order</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-citation-optional">9. Citation         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-distributors-required">10. Distributors         [Required]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#101-items">10.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1011-name">10.1.1. Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1012-location">10.1.2. Location</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-digital-object-identifier-doi-optional">11. Digital Object Identifier (DOI)         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-funding-sources-optional">12. Funding Sources         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#121-items">12.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1211-agency">12.1.1. Agency</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1212-grant-numbers">12.1.2. Grant Numbers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1213-purpose">12.1.3. Purpose</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1214-order">12.1.4. Order</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-external-source-id-optional">13. External Source ID         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#131-items">13.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#14-summary-required">14. Summary         [Required]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#15-subject-terms-required">15. Subject Terms         [Required]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#151-items">15.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#16-geographic-coverage-areas-required">16. Geographic Coverage Areas         [Required]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#161-items">16.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#17-study-time-periods-required">17. Study Time Periods         [Required]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#171-items">17.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1711-start-date">17.1.1. Start Date</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1712-end-date">17.1.2. End Date</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1713-time-frame">17.1.3. Time Frame</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#18-collection-dates-optional">18. Collection Dates         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#181-items">18.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1811-start-date">18.1.1. Start Date</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1812-end-date">18.1.2. End Date</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1813-time-frame">18.1.3. Time Frame</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#19-universe-optional">19. Universe         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#20-data-type-optional">20. Data Type         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#201-items">20.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#21-collection-notes-optional">21. Collection Notes         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#211-items">21.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-study-purpose-optional">22. Study Purpose         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#23-study-design-optional">23. Study Design         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#24-variable-description-optional">24. Variable Description         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#25-sampling-optional">25. Sampling         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#251-items">25.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#26-time-method-optional">26. Time Method         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#261-items">26.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#27-data-source-optional">27. Data Source         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#271-items">27.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#28-collection-mode-optional">28. Collection Mode         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#281-items">28.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#29-extent-of-processing-optional">29. Extent of Processing         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#291-items">29.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#30-weight-optional">30. Weight         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#31-response-rates-optional">31. Response Rates         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32-scales-optional">32. Scales         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#321-items">32.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#33-units-of-observation-optional">33. Units of Observation         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#331-items">33.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#34-geographic-unit-optional">34. Geographic Unit         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#35-restrictions-optional">35. Restrictions         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#36-changes-to-collection-optional">36. Changes to Collection         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#361-items">36.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#3611-date">36.1.1. Date</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3612-note">36.1.2. Note</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#37-series-optional">37. Series         [Optional]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#38-classifications-optional">38. Classifications         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#381-items">38.1. Items</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#39-filesets-optional">39. Filesets         [Optional]</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#391-items">39.1. Items</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#3911-number">39.1.1. Number</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3912-name">39.1.2. Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3913-sda-note">39.1.3. SDA Note</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">ICPSR Curated Study Metadata Schema</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>ICPSR Curated Study Metadata Schema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="icpsr-curated-study-metadata-schema">ICPSR Curated Study Metadata Schema</h1>
+<p>Metadata Schema for Curated ICPSR Studies as of August 09, 2023.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#version">Version</a></td>
+<td>integer</td>
+<td>The current version number for the data collection.</td>
+</tr>
+<tr>
+<td>(R) <a href="#version_date">Version Date</a></td>
+<td>string</td>
+<td>The date on which the current version of the data collection was released by ICPSR.</td>
+</tr>
+<tr>
+<td>(O) <a href="#original_release_date">Original Release Date</a></td>
+<td>string</td>
+<td>The date on which the data collection was originally released by ICPSR.</td>
+</tr>
+<tr>
+<td>(R) <a href="#study_title">Study Title</a></td>
+<td>string</td>
+<td>The authoritative title of the data collection. A full title should include a descriptive string that captures what the data collection contains as well as the geographic scope of and the time period covered by the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#alternate_titles">Alternate Titles</a></td>
+<td>array of string</td>
+<td>The alternate name(s) or acronym(s) by which a data collection may be commonly referred.</td>
+</tr>
+<tr>
+<td>(O) <a href="#link_title">Link Title</a></td>
+<td>string</td>
+<td>The title of the item being linked to. Restricted to ICPSR union catalog records only.</td>
+</tr>
+<tr>
+<td>(O) <a href="#link_url">Link Url</a></td>
+<td>string</td>
+<td>The URL of the item being linked to. Restricted to ICPSR union catalog records only.</td>
+</tr>
+<tr>
+<td>(R) <a href="#principal_investigators">Principal Investigators</a></td>
+<td>array of object</td>
+<td>The entity primarily responsible for the data collection, in order of importance. A principal investigator (PI) may be a person or an organization. Each data collection requires at least one PI.</td>
+</tr>
+<tr>
+<td>(O) <a href="#citation">Citation</a></td>
+<td>string</td>
+<td>The established bibliographic reference for the data collection.</td>
+</tr>
+<tr>
+<td>(R) <a href="#distributors">Distributors</a></td>
+<td>array of object</td>
+<td>The organization(s) responsible for distributing the data collection. Values include both the name and the location of the Distributor(s).</td>
+</tr>
+<tr>
+<td>(O) <a href="#doi">DOI</a></td>
+<td>string</td>
+<td>The registered persistent digital object identifier (DOI) associated with the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#funding_sources">Funding Sources</a></td>
+<td>array of object</td>
+<td>Information on the data collection&rsquo;s funding.</td>
+</tr>
+<tr>
+<td>(O) <a href="#external_source_ID">External Source ID</a></td>
+<td>array of string</td>
+<td>A string that allows the data collection to be associated with a unique identifier supplied by the Depositor.</td>
+</tr>
+<tr>
+<td>(R) <a href="#summary">Summary</a></td>
+<td>string</td>
+<td>A full description or abstract of the data collection&rsquo;s subject matter or intellectual content. The main goal of the Summary is to give the user a clear sense of what the collection is about, including the purpose of the collection, the major topics covered, and what questions the principal investigators attempted to answer when they conducted the data collection.</td>
+</tr>
+<tr>
+<td>(R) <a href="#subject_terms">Subject Terms</a></td>
+<td>array of string</td>
+<td>A controlled list of terms used for indexing purposes to indicate what topics a data collection reflects. Subject Terms serve to increase the collection&rsquo;s discoverability by topic.</td>
+</tr>
+<tr>
+<td>(R) <a href="#geographic_coverage_areas">Geographic Coverage Areas</a></td>
+<td>array of string</td>
+<td>The preferred and/or current names of geographic and geopolitical entities.</td>
+</tr>
+<tr>
+<td>(R) <a href="#study_time_periods">Study Time Periods</a></td>
+<td>array of object</td>
+<td>Information about the time period(s) to which the data refer. The time period should focus on the dates the data are actually about, regardless of when the data were collected.</td>
+</tr>
+<tr>
+<td>(O) <a href="#collection_dates">Collection Dates</a></td>
+<td>array of object</td>
+<td>Information on the date(s) when the data were physically collected.</td>
+</tr>
+<tr>
+<td>(O) <a href="#universe">Universe</a></td>
+<td>string</td>
+<td>The group of persons, organizations, events, or other elements that are the object of the data collection and to which the results refer.</td>
+</tr>
+<tr>
+<td>(O) <a href="#data_type">Data Type</a></td>
+<td>array of enum (of string)</td>
+<td>Information describing the kind of data included in the file.</td>
+</tr>
+<tr>
+<td>(O) <a href="#collection_notes">Collection Notes</a></td>
+<td>array of string</td>
+<td>A description of technical details and other characteristics of the data collection (such as unique authoring, discrepancies, dissemination, or processing information) that cannot be recorded in the other metadata fields but constitutes important information for the secondary data user.</td>
+</tr>
+<tr>
+<td>(O) <a href="#study_purpose">Study Purpose</a></td>
+<td>string</td>
+<td>Describes the concept of the data collection in detail.</td>
+</tr>
+<tr>
+<td>(O) <a href="#study_design">Study Design</a></td>
+<td>string</td>
+<td>Describes the procedures the researchers used to contact subjects and/or to collect the data.</td>
+</tr>
+<tr>
+<td>(O) <a href="#variable_description">Variable Description</a></td>
+<td>string</td>
+<td>Significant variables that are present in the data files distributed for public release, particularly demographic variables.</td>
+</tr>
+<tr>
+<td>(O) <a href="#sampling">Sampling</a></td>
+<td>array of string</td>
+<td>The methods used to select the cases that appear in the data collection (e.g., simple, systematic, stratified).</td>
+</tr>
+<tr>
+<td>(O) <a href="#time_method">Time Method</a></td>
+<td>array of enum (of string)</td>
+<td>The time dimension in which the data were collected and framed.</td>
+</tr>
+<tr>
+<td>(O) <a href="#data_source">Data Source</a></td>
+<td>array of string</td>
+<td>The source(s) of the data collection, when that source is external to the data collection and can be independently cited.</td>
+</tr>
+<tr>
+<td>(O) <a href="#collection_mode">Collection Mode</a></td>
+<td>array of enum (of string)</td>
+<td>The method(s) used to collect the data.</td>
+</tr>
+<tr>
+<td>(O) <a href="#extent_of_processing">Extent of Processing</a></td>
+<td>array of enum (of string)</td>
+<td>Describes processing activities and checks performed on data collections by ICPSR curation staff.</td>
+</tr>
+<tr>
+<td>(O) <a href="#weight">Weight</a></td>
+<td>string</td>
+<td>A description of the criteria for using weights in the analysis of the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#response_rates">Response Rates</a></td>
+<td>string</td>
+<td>The percentage of respondents in the sample who participated in the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#scales">Scales</a></td>
+<td>array of string</td>
+<td>Any commonly known scales used to collect data for the data collection (e.g., psychological scales such as MMPI and CPI, or occupational scales such as the Census Occupational Codes).</td>
+</tr>
+<tr>
+<td>(O) <a href="#units_of_observation">Units of Observation</a></td>
+<td>array of string</td>
+<td>Describes the entity being analyzed in the data collection; otherwise known as analysis unit.</td>
+</tr>
+<tr>
+<td>(O) <a href="#geographic_unit">Geographic Unit</a></td>
+<td>string</td>
+<td>The smallest geographic unit used in the dataset.</td>
+</tr>
+<tr>
+<td>(O) <a href="#restrictions">Restrictions</a></td>
+<td>string</td>
+<td>Information regarding any limitations on use or restrictions on access to the file(s).</td>
+</tr>
+<tr>
+<td>(O) <a href="#changes_to_collection">Changes to Collection</a></td>
+<td>array of object</td>
+<td>A summary description of changes that have been made to the data collection since its last release.</td>
+</tr>
+<tr>
+<td>(O) <a href="#series">Series</a></td>
+<td>string</td>
+<td>An ICPSR series is a named collection of related studies.</td>
+</tr>
+<tr>
+<td>(O) <a href="#classifications">Classifications</a></td>
+<td>array of string</td>
+<td>ICPSR classifications address topics broadly, and are meant to be a good starting point for exploring the collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#filesets">Filesets</a></td>
+<td>array of object</td>
+<td>Identifies the grouping of files in a data collection. Every ICPSR data collection with at least one file must have at least one defined Fileset.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-version-required"><a name="version"></a>1. Version         [Required]</h2>
+<p><strong>Description:</strong> The current version number for the data collection.</p>
+<p><strong>Type</strong>: <code>integer</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Version numbers are integers without leading zeros. Versioning begins when a data collection is first archived. Each subsequent update of the data collection increments the version number by 1. The version number is incremented when modifying or adding:  </p>
+<ul>
+<li>Data files, including additions of datasets or supplemental data files, additional masking, increasing curation level, or resupplied datasets  </li>
+<li>Documentation files  </li>
+<li>SDA (Survey Documentation and Analysis) files  </li>
+</ul>
+<p>Metadata-only patches do not increment the version number. Changes to the version number require a textual summary to be added to Changes to Collection.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">1
+</code></pre>
+<pre><code class="language-json">2
+</code></pre>
+<h2 id="2-version-date-required"><a name="version_date"></a>2. Version Date         [Required]</h2>
+<p><strong>Description:</strong> The date on which the current version of the data collection was released by ICPSR.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Format</strong>: <code>date</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> ICPSR automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2006-03-30&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2019-05-05&quot;
+</code></pre>
+<h2 id="3-original-release-date-optional"><a name="original_release_date"></a>3. Original Release Date         [Optional]</h2>
+<p><strong>Description:</strong> The date on which the data collection was originally released by ICPSR.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Format</strong>: <code>date</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> ICPSR automatically generates the release date.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2001-02-07&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2020-08-12&quot;
+</code></pre>
+<h2 id="4-study-title-required"><a name="study_title"></a>4. Study Title         [Required]</h2>
+<p><strong>Description:</strong> The authoritative title of the data collection. A full title should include a descriptive string that captures what the data collection contains as well as the geographic scope of and the time period covered by the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The Study Title includes three essential parts: the title proper, the geography, and the time period.  </p>
+<p>Title Proper:  </p>
+<ul>
+<li>
+<p>The title proper is a descriptive string that captures what the data collection contains.   </p>
+</li>
+<li>
+<p>The title proper uses title case: all major words are capitalized, while minor words are lowercased.  </p>
+</li>
+<li>
+<p>For new studies, ICPSR starts with the title proper provided by the principal investigator. Most title propers are straightforward about their contents, such as the &lsquo;American Community Survey&rsquo; or the &lsquo;Census of Law Enforcement Training Academies.&rsquo; Some title propers include a more branded description, such as &lsquo;Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project or Contents&rsquo; and &lsquo;Contexts of Cyberbullying: An Epidemiologic Study using Electronic Detection and Social Network Analysis.&rsquo;  </p>
+</li>
+<li>
+<p>For updated studies, ICPSR uses the existing title in production, making changes as necessary to add new years or additional geographical locations. For studies that are part of an ICPSR series, titles remain consistent with the previous series studies.  </p>
+</li>
+</ul>
+<p>Geography:  </p>
+<ul>
+<li>
+<p>All titles include the data collection&rsquo;s geography. If the geography is already included in the title proper, it is not repeated.  </p>
+</li>
+<li>
+<p>Cities are paired with state or province names that are spelled out (e.g., Portland, Oregon), unless the city names are unique or well-known.  </p>
+</li>
+<li>
+<p>Studies with more than four geographic locations typically are summarized using, for example, &lsquo;5 countries,&rsquo; &lsquo;8 German cities,&rsquo; &lsquo;20 U.S. states&rsquo; instead of listing all locations.   </p>
+</li>
+<li>
+<p>Descriptors that do not have a distinct geographic area, such as &lsquo;communities&rsquo; or &lsquo;regions&rsquo;, are not included in titles.   </p>
+</li>
+<li>
+<p>&lsquo;U.S.&rsquo; is used rather than &lsquo;United States&rsquo; or &lsquo;American&rsquo;.  </p>
+</li>
+</ul>
+<p>Time Period:  </p>
+<ul>
+<li>
+<p>All titles include the data collection&rsquo;s time period, which reflects the time period that the data collection covers and should match the Study Time Period. For example, in the &lsquo;Uganda Elite Study, 1964-1968&rsquo;, it is assumed that the Ugandans were surveyed about events in 1964-1968, even if the actual data collection might not have taken place until later.  </p>
+</li>
+<li>
+<p>If the time period is already included in the title proper, it is not repeated.  </p>
+</li>
+<li>
+<p>For most studies, a single year or range of years is acceptable. Years are written as four digits, including when used in a range (e.g., &lsquo;1999&rsquo;, &lsquo;2001-2003&rsquo;, or &lsquo;1999, 2010, 2015&rsquo;).  </p>
+</li>
+<li>
+<p>Months are included only when part of ICPSR series that have multiple releases, which are otherwise identical, each year. In these cases, months are spelled out (e.g., &lsquo;September 2020&rsquo; instead of &lsquo;9/2020&rsquo; or &lsquo;Sept. 2020&rsquo;).  </p>
+</li>
+</ul>
+<p><strong>Curator Notes:</strong> Curators are empowered to change the dates in approved titles without metadata librarian approval when the data supports the change. Geography changes should be submitted for approval.    </p>
+<p>If a study is part of a Series, please keep the Title consistent with the previous studies in the Series.    </p>
+<p>If &lsquo;National,&rsquo; &lsquo;American&rsquo;, &lsquo;Congressional&rsquo; or &lsquo;Federal&rsquo; is in the title, add &lsquo;[United States]&rsquo; in brackets.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project, Kansas City, Missouri, 2014-2017&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Health and Relationships Project, United States, 2014-2015&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Targeted Interventions to Prevent Chronic Low Back Pain in High Risk Patients: A Multi-Site Pragmatic Randomized Controlled Trial (TARGET Trial), 4 U.S. cities, 2016-2019&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Aid Like A Paycheck (ALAP), Texas and California, 2014-2017&quot;
+</code></pre>
+<h2 id="5-alternate-titles-optional"><a name="alternate_titles"></a>5. Alternate Titles         [Optional]</h2>
+<p><strong>Description:</strong> The alternate name(s) or acronym(s) by which a data collection may be commonly referred.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Alternate Title often takes the form of a shortened (by abbreviation or acronym) version of the official title.</p>
+<h3 id="51-items"><a name="autogenerated_heading_2"></a>5.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;Add Health Parent Study&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;FACES 2009&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Surveys of Consumers&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Eurobarometer 85.2&quot;
+]
+</code></pre>
+<h2 id="6-link-title-optional"><a name="link_title"></a>6. Link Title         [Optional]</h2>
+<p><strong>Description:</strong> The title of the item being linked to. Restricted to ICPSR union catalog records only.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Always appears with the Link URL.</p>
+<p><strong>Curator Notes:</strong> This field is only used with union catalog records.</p>
+<p><strong>Example:</strong> </p>
+<pre><code class="language-json">&quot;Cebu Longitudinal Health and Nutrition Survey&quot;
+</code></pre>
+<h2 id="7-link-url-optional"><a name="link_url"></a>7. Link Url         [Optional]</h2>
+<p><strong>Description:</strong> The URL of the item being linked to. Restricted to ICPSR union catalog records only.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Always appears with the Link Title.</p>
+<p><strong>Curator Notes:</strong> This field is only used with union catalog records.</p>
+<p><strong>Example:</strong> </p>
+<pre><code class="language-json">&quot;https://cebu.cpc.unc.edu/&quot;
+</code></pre>
+<h2 id="8-principal-investigators-required"><a name="principal_investigators"></a>8. Principal Investigators         [Required]</h2>
+<p><strong>Description:</strong> The entity primarily responsible for the data collection, in order of importance. A principal investigator (PI) may be a person or an organization. Each data collection requires at least one PI.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="81-items"><a name="autogenerated_heading_3"></a>8.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#principal_investigators_items_name">Name</a></td>
+<td>string</td>
+<td>The name of the entity primarily responsible for the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#principal_investigators_items_affiliation">Affiliation</a></td>
+<td>string</td>
+<td>The organization with which an individual PI was affiliated at the time of a data collection&rsquo;s publication.</td>
+</tr>
+<tr>
+<td>(R) <a href="#principal_investigators_items_order">Order</a></td>
+<td>integer</td>
+<td>The order of importance for the PIs associated with the data collection &ndash; typically provided to ICPSR by the lead PI. A value of &lsquo;1&rsquo; indicates the primary PI, &lsquo;2&rsquo; the second, and so forth.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="811-name"><a name="principal_investigators_items_name"></a>8.1.1. Name</h4>
+<p><strong>Description:</strong> The name of the entity primarily responsible for the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> ICPSR utilizes VIAF (<a href="https://viaf.org/">https://viaf.org/</a>) as its authority control source. The ICPSR Personal Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002</a>) and Organizational Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004</a>) can also be used, especially for organization names.</p>
+<p><strong>Usage Notes:</strong> The authority control for both personal and organizational names is the <a href="https://viaf.org/">Virtual International Authority File, or VIAF</a>, which links the various national authority files (that is, catalogs of authoritative names such as the <a href="https://authorities.loc.gov/">Library of Congress Name Authority File</a>) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.  </p>
+<p>For names of people:   </p>
+<ul>
+<li>
+<p>The First name can include any middle names or initials; the Last name can include any suffixes (such as &lsquo;II&rsquo; or &lsquo;Jr.&rsquo;).   </p>
+</li>
+<li>
+<p>There is no space between first and middle initials.  </p>
+</li>
+<li>
+<p>Abbreviations are discouraged, especially &lsquo;et al.&rsquo;  &lsquo;Sr.&rsquo; and &lsquo;Jr.&rsquo; are allowed.    </p>
+</li>
+</ul>
+<p>For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.    </p>
+<p><strong>Curator Notes:</strong> Years are not indicated when listing individual PIs, even if VIAF uses them to disambiguate between same-named PIs.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;The New York Times&quot;
+</code></pre>
+<pre><code class="language-json">&quot;James A. McCann&quot;
+</code></pre>
+<pre><code class="language-json">&quot;United States Department of Justice. Office of Justice Programs. Bureau of Justice Statistics&quot;
+</code></pre>
+<h4 id="812-affiliation"><a name="principal_investigators_items_affiliation"></a>8.1.2. Affiliation</h4>
+<p><strong>Description:</strong> The organization with which an individual PI was affiliated at the time of a data collection&rsquo;s publication.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> ICPSR utilizes VIAF (<a href="http://viaf.org/">http://viaf.org/</a>) as its authority control source. The ICPSR Organization Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004</a>) may also be used for Organization names.</p>
+<p><strong>Usage Notes:</strong> The authority control for organizational names is the <a href="https://viaf.org/">Virtual International Authority File, or VIAF</a>, which links the various national authority files (that is, catalogs of authoritative names such as the <a href="https://authorities.loc.gov/">Library of Congress Name Authority File</a>) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.  </p>
+<p>For names of organizations:  </p>
+<ul>
+<li>
+<p>If an organizational affiliation for a person is not know, &lsquo;Unknown&rsquo; is listed in that principal investigator&rsquo;s (PI&rsquo;s) Organization.  </p>
+</li>
+<li>
+<p>If the list of PIs includes multiple people affiliated with the same organization, that organization is repeated for each person.  </p>
+</li>
+<li>
+<p>For organizational PIs, the higher level of an organization should be listed before the lower level, and levels should be separated by a period (e.g.,&rsquo;University of Michigan. College of Literature, Science, and the Arts&rsquo;). There is no period following the last level listed.  </p>
+</li>
+<li>
+<p>Abbreviations are discouraged, except &lsquo;Inc.&rsquo; and &lsquo;Co.&rsquo; In particular, governmental PI&rsquo;s are spelled out completely (e.g., &lsquo;United States Department of Commerce&rsquo; rather than &lsquo;U.S. Dept. of Commerce&rsquo;).  </p>
+</li>
+<li>
+<p>&lsquo;The&rsquo; is not included at the start of an organization name unless it is actually part of the official name (e.g., &lsquo;The New York Times&rsquo; but not &lsquo;The National Institute of Justice&rsquo;).  </p>
+</li>
+</ul>
+<p>For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;University of Michigan&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Harvard University. Medical School&quot;
+</code></pre>
+<pre><code class="language-json">&quot;University of California, Irvine&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Urban Institute&quot;
+</code></pre>
+<h4 id="813-order"><a name="principal_investigators_items_order"></a>8.1.3. Order</h4>
+<p><strong>Description:</strong> The order of importance for the PIs associated with the data collection &ndash; typically provided to ICPSR by the lead PI. A value of &lsquo;1&rsquo; indicates the primary PI, &lsquo;2&rsquo; the second, and so forth.</p>
+<p><strong>Type</strong>: <code>integer</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">1
+</code></pre>
+<pre><code class="language-json">2
+</code></pre>
+<pre><code class="language-json">3
+</code></pre>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;name&quot;: &quot;Jane Doe&quot;,
+        &quot;affiliation&quot;: &quot;Urban Institute&quot;,
+        &quot;order&quot;: 1
+    },
+    {
+        &quot;name&quot;: &quot;Harvard University. Medical School&quot;,
+        &quot;order&quot;: 2
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;name&quot;: &quot;Urban Institute&quot;,
+        &quot;order&quot;: 1
+    }
+]
+</code></pre>
+<h2 id="9-citation-optional"><a name="citation"></a>9. Citation         [Optional]</h2>
+<p><strong>Description:</strong> The established bibliographic reference for the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The Citation is dynamically assembled from other entry fields in this format: Principal-Investigator-list. Study-Title. Distributor-list, Version-Date. DOI.  </p>
+<p>For additional information about how DOIs for citations are generated, see the &lsquo;Identifier&rsquo; field usage notes.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;University of Michigan. Survey Research Center. Economic Behavior Program. Survey of Consumer Attitudes and Behavior, September 2018. Inter-university Consortium for Political and Social Research [distributor], 2021-11-18. https://doi.org/10.3886/ICPSR38121.v1&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Goldin, Claudia, and Lawrence Katz. The 1915 Iowa State Census Project. ICPSR28501-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-12-14. http://doi.org/10.3886/ICPSR28501.v1&quot;
+]
+</code></pre>
+<h2 id="10-distributors-required"><a name="distributors"></a>10. Distributors         [Required]</h2>
+<p><strong>Description:</strong> The organization(s) responsible for distributing the data collection. Values include both the name and the location of the Distributor(s).</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<p><strong>Curator Notes:</strong> While distributor name and place are separate fields, they always appear in tandem. Therefore, a full distributor would be &lsquo;Ann Arbor, MI. Inter-university Consortium for Social and Political Research.&rsquo;   </p>
+<p>Because ICPSR itself is so frequently a distributor, the full name and location of ICPSR is easily accessible via a button in the metadata editor. If a non-ICPSR distributor is necessary, please confirm the standards with the Metadata Librarian. Please note that external distributors are often appropriate for Union Catalog entries.  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="101-items"><a name="autogenerated_heading_4"></a>10.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#distributors_items_name">Name</a></td>
+<td>string</td>
+<td>The name of the organization(s) responsible for distributing the data collection.</td>
+</tr>
+<tr>
+<td>(R) <a href="#distributors_items_location">Location</a></td>
+<td>string</td>
+<td>The location of the organization(s) responsible for distributing the data collection.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1011-name"><a name="distributors_items_name"></a>10.1.1. Name</h4>
+<p><strong>Description:</strong> The name of the organization(s) responsible for distributing the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> The vast majority of the time, the Distributor is the ICPSR. If it is not, consult the Organization Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004</a>)</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Inter-university Consortium for Political and Social Research&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Roper Center for Public Opinion Research&quot;
+</code></pre>
+<h4 id="1012-location"><a name="distributors_items_location"></a>10.1.2. Location</h4>
+<p><strong>Description:</strong> The location of the organization(s) responsible for distributing the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Includes the city and state (or country) where the distributor is located.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Ann Arbor, MI&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Princeton, NJ&quot;
+</code></pre>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;name&quot;: &quot;Inter-university Consortium for Political and Social Research&quot;,
+        &quot;location&quot;: &quot;Ann Arbor, MI&quot;
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;name&quot;: &quot;Inter-university Consortium for Political and Social Research&quot;,
+        &quot;location&quot;: &quot;Ann Arbor, MI&quot;
+    },
+    {
+        &quot;name&quot;: &quot;Roper Center for Public Opinion Research&quot;,
+        &quot;location&quot;: &quot;Princeton, NJ&quot;
+    }
+]
+</code></pre>
+<h2 id="11-digital-object-identifier-doi-optional"><a name="doi"></a>11. Digital Object Identifier (DOI)         [Optional]</h2>
+<p><strong>Description:</strong> The registered persistent digital object identifier (DOI) associated with the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Format</strong>: <code>uri</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The DOI (digital object identifier) is a persistent identifier provided by DataCite, a DOI registration agency. The DOI name is divided into three parts, separated by slashes (&lsquo;/&rsquo;): &lsquo;https://doi.org&rsquo; is the HTTP URL link; followed by &lsquo;10.3886&rsquo;, a globally unique number that identifies ICPSR as the registrant within the DOI namespace; followed by &lsquo;ICPSR&rsquo;, the ICPSR study number, and then the version number. The study number is automatically generated by the ICPSR system and is unique. Current study numbers are five digits, though four digit numbers were once standard and are still acceptable. Studies with fewer than five digits will have zeroes prepended in the DOI, ie. &lsquo;10.3886/ICPSR02760&rsquo; for study #2760.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;https://doi.org/10.3886/ICPSR03025.v2&quot;
+</code></pre>
+<pre><code class="language-json">&quot;https://doi.org/10.3886/ICPSR06425.v1&quot;
+</code></pre>
+<h2 id="12-funding-sources-optional"><a name="funding_sources"></a>12. Funding Sources         [Optional]</h2>
+<p><strong>Description:</strong> Information on the data collection&rsquo;s funding.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<h3 id="121-items"><a name="autogenerated_heading_5"></a>12.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#funding_sources_items_agency">Agency</a></td>
+<td>string</td>
+<td>The name of the organization that supported the production and/or archiving of the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#funding_sources_items_grant_numbers">Grant Numbers</a></td>
+<td>array of string</td>
+<td>The unique identifier associated with the funding.</td>
+</tr>
+<tr>
+<td>(O) <a href="#funding_sources_items_purpose">Purpose</a></td>
+<td>array of enum (of string)</td>
+<td>Indicates the purpose of the funding.</td>
+</tr>
+<tr>
+<td>(R) <a href="#funding_sources_items_order">Order</a></td>
+<td>integer</td>
+<td>Indication of the relative order of funding sources associated with the data collection.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1211-agency"><a name="funding_sources_items_agency"></a>12.1.1. Agency</h4>
+<p><strong>Description:</strong> The name of the organization that supported the production and/or archiving of the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> If the organization appears in the ICPSR Organization Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004</a>), the value must conform to the authority list. For organizations not on the authority list, VIAF (<a href="https://viaf.org/">https://viaf.org/</a>) may be used as an authority control source.</p>
+<p><strong>Usage Notes:</strong> For multi-level sponsoring or funding agencies, up to three levels are allowed, listed in order of highest (or largest) level first followed by a period, then next highest level followed by a period, and (if needed) a third level. There is no period following the last level listed.</p>
+<p><strong>Curator Notes:</strong> Generally speaking, if a grant number is not provided, the PI&rsquo;s home institution does not need to be listed as a funding agency. If the PI provides a grant number or other award information, it may be appropriate to.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;United States Department of Justice. Office of Justice Programs. Bureau of Justice Statistics&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Institute of Museum and Library Services&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Robert Wood Johnson Foundation&quot;
+</code></pre>
+<h4 id="1212-grant-numbers"><a name="funding_sources_items_grant_numbers"></a>12.1.2. Grant Numbers</h4>
+<p><strong>Description:</strong> The unique identifier associated with the funding.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Internal blanks in the Grant Number are replaced with hyphens. Multiple grants from the same funding agency are separated by a comma.</p>
+<h5 id="12121-items"><a name="autogenerated_heading_6"></a>12.1.2.1. Items</h5>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;SES-1835721&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;MDR-8550085&quot;,
+    &quot;MDR-8550204&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;40791&quot;
+]
+</code></pre>
+<h4 id="1213-purpose"><a name="funding_sources_items_purpose"></a>12.1.3. Purpose</h4>
+<p><strong>Description:</strong> Indicates the purpose of the funding.</p>
+<p><strong>Type</strong>: <code>array of enum (of string)</code></p>
+<h5 id="12131-items"><a name="autogenerated_heading_7"></a>12.1.3.1. Items</h5>
+<p><strong>Type</strong>: <code>enum (of string)</code></p>
+<p>Must be one of:</p>
+<ul>
+<li>&ldquo;collection and/or analysis of data&rdquo;</li>
+<li>&ldquo;secondary analysis of data&rdquo;</li>
+<li>&ldquo;archiving of data&rdquo;</li>
+</ul>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;collection and/or analysis of data&quot;,
+    &quot;secondary analysis of data&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;archiving of data&quot;
+]
+</code></pre>
+<h4 id="1214-order"><a name="funding_sources_items_order"></a>12.1.4. Order</h4>
+<p><strong>Description:</strong> Indication of the relative order of funding sources associated with the data collection.</p>
+<p><strong>Type</strong>: <code>integer</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> A value of &lsquo;1&rsquo; indicates the primary funder, &lsquo;2&rsquo; the second, and so forth.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">1
+</code></pre>
+<pre><code class="language-json">2
+</code></pre>
+<pre><code class="language-json">3
+</code></pre>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;agency&quot;: &quot;Robert Wood Johnson Foundation&quot;,
+        &quot;grant_numbers&quot;: [
+            &quot;MDR-8550085&quot;,
+            &quot;MDR-8550204&quot;
+        ],
+        &quot;purpose&quot;: [
+            &quot;collection and/or analysis of data&quot;
+        ],
+        &quot;order&quot;: 1
+    },
+    {
+        &quot;agency&quot;: &quot;United States Department of Justice. Office of Justice Programs. Bureau of Justice Statistics&quot;,
+        &quot;grant_numbers&quot;: [
+            &quot;SES-1835721&quot;
+        ],
+        &quot;order&quot;: 2
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;agency&quot;: &quot;Institute of Museum and Library Services&quot;,
+        &quot;order&quot;: 1
+    }
+]
+</code></pre>
+<h2 id="13-external-source-id-optional"><a name="external_source_ID"></a>13. External Source ID         [Optional]</h2>
+<p><strong>Description:</strong> A string that allows the data collection to be associated with a unique identifier supplied by the Depositor.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Curator Notes:</strong> The external source ID will always be provided by the depositor. If not provided, it is reasonable to assume the data collection does not have one.</p>
+<h3 id="131-items"><a name="autogenerated_heading_8"></a>13.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;BJS:271&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;PSC:12345&quot;
+]
+</code></pre>
+<h2 id="14-summary-required"><a name="summary"></a>14. Summary         [Required]</h2>
+<p><strong>Description:</strong> A full description or abstract of the data collection&rsquo;s subject matter or intellectual content. The main goal of the Summary is to give the user a clear sense of what the collection is about, including the purpose of the collection, the major topics covered, and what questions the principal investigators attempted to answer when they conducted the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The main goal of the Summary is to give the reader a clear sense of what the data collection is about, including substantive information about the different parts of the data collection not adequately conveyed by the Fileset names or found elsewhere in the metadata.   </p>
+<p>A listing of major variables or categories of variables with a few examples is also important, ending with the demographic variables. It is also salient to indicate the unit of analysis for the data collection, i.e., who or what is being studied: individuals, housing units, courts, criminal acts, etc. Most often the unit of analysis is the individual; where it is not, it is particularly important to make this clear.  </p>
+<p>The Summary is written in the third person and avoids attempting to address issues of how the data might be used, who might be interested in the data, or any evaluative comments about the worth or usefulness of the data collection. The Summary uses past tense when describing the process of collecting the data and present tense when necessary, such as when describing the data (e.g., &lsquo;The MIDUS Refresher collection is split into two datasets.&rsquo;). Numerals are used instead of spelling them out; if a number is spelled out for emphasis, the number is attached in parentheses (e.g. &lsquo;Two thousand (2,000)&rsquo;).    </p>
+<p><strong>Curator Notes:</strong> Curators should avoid attempting to address issues of how the data might be used, who might be interested in the data, or any evaluative comments about the worth or usefulness of the study. Statements about conclusions the investigators drew from the data should be omitted. The main goal should be to give the reader a clear sense of what the study is about.    </p>
+<p>Use past tense when describing the process of collecting the data.  Use present tense when necessary, such as when you are describing the data: &lsquo;The MIDUS Refresher collection is split into two datasets.&rsquo;  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;In 2014, Chicago Public Schools, looking to reduce the possibility of gun violence among school-aged youth, applied for a grant through the National Institute of Justice. CPS was awarded the Comprehensive School Safety Initiative grant and use said grant to establish the 'Connect and Redirect to Respect' program. This program used student social media data to identify and intervene with students thought to be at higher risk for committing violence. At-risk behaviors included brandishing a weapon, instigating conflict online, signaling gang involvement, and threats towards others. Identified at-risk students would be contacted by a member of the CPS Network Safety Team or the Chicago Police Department's Gang School Safety Team, depending on the risk level of the behavior. To evaluate the efficacy of CRR, the University of Chicago Crime Lab compared outcomes for students enrolled in schools that received the program to outcomes for students enrolled in comparison schools, which did not receive the program. 32 schools were selected for the study, with a total of 44,503 students. Demographic variables included age, race, sex, and ethnicity. Misconduct and academic variables included arrest history, in-school suspensions, out-of-school suspensions, GPA, and attendance days.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The Health and Relationship Project is a study of both spouses in same-sex and different-sex marriages who were legally married and aged 35 to 65 at the time of data collection (2015). There are two parts of this study: a baseline questionnaire and a daily diary questionnaire completed for 10 consecutive days; both components were completed online and spouses were asked to complete the surveys separately. The baseline questionnaire asks participants about a number of topics related to marriage and health, including stress, health status and health behaviors, relationship quality, and how they have approached health problems in the past. The diary questionnaire asks participants a number of questions about the past 24 hours, including daily stress experiences, social interactions, and health behaviors.&quot;
+</code></pre>
+<h2 id="15-subject-terms-required"><a name="subject_terms"></a>15. Subject Terms         [Required]</h2>
+<p><strong>Description:</strong> A controlled list of terms used for indexing purposes to indicate what topics a data collection reflects. Subject Terms serve to increase the collection&rsquo;s discoverability by topic.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> Values from the ICPSR Subject Terms Thesaurus (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001</a>) and the ICPSR Personal Names Authority List (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002</a>) are preferred. Non-thesaurus terms are considered for inclusion if provided.</p>
+<p><strong>Usage Notes:</strong> The Library of Congress Subject Terms (<a href="https://authorities.loc.gov">https://authorities.loc.gov</a>) is referenced when adding new terms to the ICPSR Subject Thesaurus.</p>
+<p><strong>Curator Notes:</strong> Non-thesaurus terms can be submitted in the metadata editor and will be reviewed by the metadata librarian. If an ICPSR staff member submits a non-thesaurus term, the metadata librarian will gauge the necessity of this term, check it against the Library of Congress Subject Headings to see if a different related term should be used, and consider it for addition to the ICPSR thesaurus.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="151-items"><a name="autogenerated_heading_9"></a>15.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;child care&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Social Security&quot;,
+    &quot;crime&quot;,
+    &quot;victimization&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;COVID-19&quot;,
+    &quot;Biden, Joe&quot;
+]
+</code></pre>
+<h2 id="16-geographic-coverage-areas-required"><a name="geographic_coverage_areas"></a>16. Geographic Coverage Areas         [Required]</h2>
+<p><strong>Description:</strong> The preferred and/or current names of geographic and geopolitical entities.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> ICPSR Geographic Names Thesaurus (<a href="https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003">https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003</a>).</p>
+<p><strong>Usage Notes:</strong> Geographic terms include hierarchies of region, continent, country, and cities.   </p>
+<ul>
+<li>For a U.S. city, the state and country are listed alongside (e.g., &lsquo;Los Angeles, California, United States&rsquo;).   </li>
+<li>Non-U.S. geographic subdivisions need not include hierarchical relations, with the specific exceptions of Canadian provinces and the countries within the United Kingdom.  </li>
+</ul>
+<p>County-level information is typically not indicated. If a U.S. county is included, the state and &lsquo;United States&rsquo; must be included as well.  </p>
+<p>The Getty Thesaurus of Geographic Names (<a href="http://www.getty.edu/research/tools/vocabularies/tgn/index.html">http://www.getty.edu/research/tools/vocabularies/tgn/index.html</a>) is referenced when adding new geographic names.  </p>
+<p><strong>Curator Notes:</strong> The metadata editor will automatically put this field in alphabetical order, regardless of hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="161-items"><a name="autogenerated_heading_10"></a>16.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;United States&quot;,
+    &quot;Maryland&quot;,
+    &quot;Baltimore&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;United Kingdom&quot;,
+    &quot;China&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Canada&quot;,
+    &quot;Alberta&quot;
+]
+</code></pre>
+<h2 id="17-study-time-periods-required"><a name="study_time_periods"></a>17. Study Time Periods         [Required]</h2>
+<p><strong>Description:</strong> Information about the time period(s) to which the data refer. The time period should focus on the dates the data are actually about, regardless of when the data were collected.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="171-items"><a name="autogenerated_heading_11"></a>17.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#study_time_periods_items_start_date">Start Date</a></td>
+<td>string</td>
+<td>The initial date for a time period to which the data refer.</td>
+</tr>
+<tr>
+<td>(R) <a href="#study_time_periods_items_end_date">End Date</a></td>
+<td>string</td>
+<td>The closing date for a time period to which the data refer. If time period information is limited to a single year (e.g., &lsquo;2020&rsquo;) and more detailed information (such as month) is not available, the same value should be used for both start and end dates.</td>
+</tr>
+<tr>
+<td>(O) <a href="#study_time_periods_items_time_frame">Time Frame</a></td>
+<td>string</td>
+<td>An optional free text description of the time(s) (or &lsquo;time frame&rsquo;) to which the data refer, typically used for time periods that cannot be expressed using just numbers, such as seasons or semesters (e.g., &lsquo;Fall 2012&rsquo;), or to add context to a specific Study Time Period when multiple entries are present (e.g., &lsquo;Wave 1&rsquo; or &lsquo;Student data&rsquo;).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1711-start-date"><a name="study_time_periods_items_start_date"></a>17.1.1. Start Date</h4>
+<p><strong>Description:</strong> The initial date for a time period to which the data refer.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Study Time Period focuses on the dates the data are actually about, regardless of when the data were collected.   </p>
+<p>Study Time Period generally corresponds to the dates that appear in the Study Title; days and months may be included in the Study Time Period even though they are not in the Study Title.  </p>
+<p>Dates are formatted in accordance with ISO 8601 (YYYY, YYYY-MM, or YYYY-MM-DD). One hyphen separates the parts of a date; two hyphens separate two dates. Ranges may be expressed in years (YYYY&ndash;YYYY), months (YYYY-MM&ndash;YYYY-MM), or days (YYYY-MM-DD&ndash;YYYY-MM-DD). No spaces are permitted in date expressions.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2020&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2006-03&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2020-01-21&quot;
+</code></pre>
+<h4 id="1712-end-date"><a name="study_time_periods_items_end_date"></a>17.1.2. End Date</h4>
+<p><strong>Description:</strong> The closing date for a time period to which the data refer. If time period information is limited to a single year (e.g., &lsquo;2020&rsquo;) and more detailed information (such as month) is not available, the same value should be used for both start and end dates.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Study Time Period focuses on the dates the data are actually about, regardless of when the data were collected.   </p>
+<p>Study Time Period generally corresponds to the dates that appear in the Study Title; days and months may be included in the Study Time Period even though they are not in the Study Title.  </p>
+<p>Dates are formatted in accordance with ISO 8601 (YYYY, YYYY-MM, or YYYY-MM-DD). One hyphen separates the parts of a date; two hyphens separate two dates. Ranges may be expressed in years (YYYY&ndash;YYYY), months (YYYY-MM&ndash;YYYY-MM), or days (YYYY-MM-DD&ndash;YYYY-MM-DD). No spaces are permitted in date expressions.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2021&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2006-09&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2020-10-31&quot;
+</code></pre>
+<h4 id="1713-time-frame"><a name="study_time_periods_items_time_frame"></a>17.1.3. Time Frame</h4>
+<p><strong>Description:</strong> An optional free text description of the time(s) (or &lsquo;time frame&rsquo;) to which the data refer, typically used for time periods that cannot be expressed using just numbers, such as seasons or semesters (e.g., &lsquo;Fall 2012&rsquo;), or to add context to a specific Study Time Period when multiple entries are present (e.g., &lsquo;Wave 1&rsquo; or &lsquo;Student data&rsquo;).</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The textual description (&lsquo;time frame&rsquo;) is used to add context to the Study Time Period when multiple time periods exist (e.g., to describe different waves, dataset names, or fiscal year designation) and/or when the date cannot be expressed exclusively through numbers, such as seasons or other units of time where the data producer did not clarify the exact dates they meant.  </p>
+<p>The textual description should not simply restate the time period in words. For example, if the Time Period is 2020-01, the Time Frame should not be &lsquo;January 2020&rsquo;.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Wave 1&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Spring 2013&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Post-Survey Follow-Up&quot;
+</code></pre>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;start_date&quot;: &quot;2020-01-21&quot;,
+        &quot;end_date&quot;: &quot;2020-09-21&quot;,
+        &quot;time_frame&quot;: &quot;Wave 1&quot;
+    },
+    {
+        &quot;start_date&quot;: &quot;2021-03-01&quot;,
+        &quot;end_date&quot;: &quot;2021-10-01&quot;,
+        &quot;time_frame&quot;: &quot;Wave 2&quot;
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;start_date&quot;: &quot;2020&quot;,
+        &quot;end_date&quot;: &quot;2020&quot;
+    }
+]
+</code></pre>
+<h2 id="18-collection-dates-optional"><a name="collection_dates"></a>18. Collection Dates         [Optional]</h2>
+<p><strong>Description:</strong> Information on the date(s) when the data were physically collected.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="181-items"><a name="autogenerated_heading_12"></a>18.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#collection_dates_items_start_date">Start Date</a></td>
+<td>string</td>
+<td>The initial date for a period in which data were collected.</td>
+</tr>
+<tr>
+<td>(R) <a href="#collection_dates_items_end_date">End Date</a></td>
+<td>string</td>
+<td>The closing date for a period in which data were collected. If the data collection was limited to a single year (e.g., &lsquo;2020&rsquo;) and more detailed information (such as month) is not available, the same value should be used for both start and end dates.</td>
+</tr>
+<tr>
+<td>(O) <a href="#collection_dates_items_time_frame">Time Frame</a></td>
+<td>string</td>
+<td>An optional free text description of a period in which the data were collected, typically used for time periods that cannot be expressed using just numbers (e.g., &lsquo;Fall 2012&rsquo;) or to add context to a specific Collection Date when multiple entries are present (e.g., &lsquo;Wave 1&rsquo; or &lsquo;Student data&rsquo;).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1811-start-date"><a name="collection_dates_items_start_date"></a>18.1.1. Start Date</h4>
+<p><strong>Description:</strong> The initial date for a period in which data were collected.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong>     Dates are formatted in accordance with ISO 8601 (YYYY, YYYY-MM, or YYYY-MM-DD). One hyphen separates the parts of a date; two hyphens separate two dates. Ranges may be expressed in years (YYYY&ndash;YYYY), months (YYYY-MM&ndash;YYYY-MM), or days (YYYY-MM-DD&ndash;YYYY-MM-DD). No spaces are permitted in date expressions.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2020&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2006-03&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2020-01-21&quot;
+</code></pre>
+<h4 id="1812-end-date"><a name="collection_dates_items_end_date"></a>18.1.2. End Date</h4>
+<p><strong>Description:</strong> The closing date for a period in which data were collected. If the data collection was limited to a single year (e.g., &lsquo;2020&rsquo;) and more detailed information (such as month) is not available, the same value should be used for both start and end dates.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong>     Dates are formatted in accordance with ISO 8601 (YYYY, YYYY-MM, or YYYY-MM-DD). One hyphen separates the parts of a date; two hyphens separate two dates. Ranges may be expressed in years (YYYY&ndash;YYYY), months (YYYY-MM&ndash;YYYY-MM), or days (YYYY-MM-DD&ndash;YYYY-MM-DD). No spaces are permitted in date expressions.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2021&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2006-09&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2020-10-31&quot;
+</code></pre>
+<h4 id="1813-time-frame"><a name="collection_dates_items_time_frame"></a>18.1.3. Time Frame</h4>
+<p><strong>Description:</strong> An optional free text description of a period in which the data were collected, typically used for time periods that cannot be expressed using just numbers (e.g., &lsquo;Fall 2012&rsquo;) or to add context to a specific Collection Date when multiple entries are present (e.g., &lsquo;Wave 1&rsquo; or &lsquo;Student data&rsquo;).</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The textual description (&lsquo;time frame&rsquo;) is used to add context to the Collection Date when multiple time periods exist (e.g., to describe different study waves, dataset names, or fiscal year designation) and/or when the date cannot be expressed exclusively through numbers, such as seasons or other units of time where the data producer did not clarify the exact dates they meant.  </p>
+<p>The textual description should not simply restate the time period in words. For example, if the Time Period is 2020-01, the Time Frame should not be &lsquo;January 2020&rsquo;.  </p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Wave 1&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Spring 2013&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Post-Survey Follow-Up&quot;
+</code></pre>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;start_date&quot;: &quot;2020-01-21&quot;,
+        &quot;end_date&quot;: &quot;2020-09-21&quot;,
+        &quot;time_frame&quot;: &quot;Wave 1&quot;
+    },
+    {
+        &quot;start_date&quot;: &quot;2021-03-01&quot;,
+        &quot;end_date&quot;: &quot;2021-10-01&quot;,
+        &quot;time_frame&quot;: &quot;Wave 2&quot;
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;start_date&quot;: &quot;2020&quot;,
+        &quot;end_date&quot;: &quot;2020&quot;
+    }
+]
+</code></pre>
+<h2 id="19-universe-optional"><a name="universe"></a>19. Universe         [Optional]</h2>
+<p><strong>Description:</strong> The group of persons, organizations, events, or other elements that are the object of the data collection and to which the results refer.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Age, nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The Universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. In general, the Universe statement is about one sentence or shorter, and reflects the entire possible population a data collection sought to study.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;All households in the United States with phones.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Part 1: Thirty cities in Massachusetts during 1980-1986. Parts 2-4: All residents in Massachusetts during 1986.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Individuals self-identified as transgender, trans, genderqueer, non-binary, or other identities on the transgender identity spectrum aged 18 and older residing in the fifty U.S. states, the District of Columbia, American Samoa, Guam, Puerto Rico, and U.S. military bases overseas.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Jihadists from the United States and Canada, along with Incels from Germany, Canada, the United States, and United Kingdom.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;All publicly funded medical examiner and coroner offices.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Uncertified ballots for the 2000 United States presidential election in Florida.&quot;
+</code></pre>
+<h2 id="20-data-type-optional"><a name="data_type"></a>20. Data Type         [Optional]</h2>
+<p><strong>Description:</strong> Information describing the kind of data included in the file.</p>
+<p><strong>Type</strong>: <code>array of enum (of string)</code></p>
+<p><strong>Usage Notes:</strong>   </p>
+<table>
+<thead>
+<tr>
+<th><em>Option</em></th>
+<th><em>Description</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>administrative records data</td>
+<td>Information collected on individuals or groups as part of the routine administrative procedures of an agency, business, or institution. Such data are not usually collected with research purposes in mind, may be voluminous, and may require preparation such as coding in order to be usable by researchers. (Examples: income tax forms, patent applications, naturalization records, death certificates.)</td>
+</tr>
+<tr>
+<td>aggregate data</td>
+<td>When a file consists of summarized statistical data for an entire population.</td>
+</tr>
+<tr>
+<td>audio: sound data</td>
+<td>Sound data recorded either in analog or digital form.</td>
+</tr>
+<tr>
+<td>census/enumeration data</td>
+<td>When data are collected from all members of a population.</td>
+</tr>
+<tr>
+<td>clinical data</td>
+<td>When the data deal with psychological or medical-related testing.</td>
+</tr>
+<tr>
+<td>event/transaction data</td>
+<td>When the data deal with a succession of events or transactions that occur over a specified time period.</td>
+</tr>
+<tr>
+<td>experimental data</td>
+<td>Gleaned from experiments, not clinical in nature.</td>
+</tr>
+<tr>
+<td>geographic information system (GIS) data</td>
+<td>Data that captures positions and spatial patterns on Earth&rsquo;s surface.</td>
+</tr>
+<tr>
+<td>image: photographs, drawings, graphical representations</td>
+<td>Data recorded as a still image.</td>
+</tr>
+<tr>
+<td>medical records</td>
+<td>Health-related data that is associated with regular patient care.</td>
+</tr>
+<tr>
+<td>observational data</td>
+<td>When researchers record their observations.</td>
+</tr>
+<tr>
+<td>program source code</td>
+<td>When a file consists of computer program language.</td>
+</tr>
+<tr>
+<td>roll call voting data</td>
+<td>For records of votes of legislative bodies.</td>
+</tr>
+<tr>
+<td>survey data</td>
+<td>When a file consists of data collected from a sample of respondents, generally through structured interviews or self-administered questionnaires.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>When a file is composed solely of computer-readable text (like verbatim responses).</td>
+</tr>
+<tr>
+<td>video: film, animation, etc.</td>
+<td>Moving image with or without sound recorded either in analog or digital form.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="201-items"><a name="autogenerated_heading_13"></a>20.1. Items</h3>
+<p><strong>Type</strong>: <code>enum (of string)</code></p>
+<p>Must be one of:</p>
+<ul>
+<li>&ldquo;administrative records data&rdquo;</li>
+<li>&ldquo;aggregate data&rdquo;</li>
+<li>&ldquo;audio: sound data&rdquo;</li>
+<li>&ldquo;census/enumeration data&rdquo;</li>
+<li>&ldquo;clinical data&rdquo;</li>
+<li>&ldquo;event/transaction data&rdquo;</li>
+<li>&ldquo;experimental data&rdquo;</li>
+<li>&ldquo;geographic information system (GIS) data&rdquo;</li>
+<li>&ldquo;images: photographs, drawings, graphical representations&rdquo;</li>
+<li>&ldquo;medical records&rdquo;</li>
+<li>&ldquo;observational data&rdquo;</li>
+<li>&ldquo;program source code&rdquo;</li>
+<li>&ldquo;roll call voting data&rdquo;</li>
+<li>&ldquo;survey data&rdquo;</li>
+<li>&ldquo;text&rdquo;</li>
+<li>&ldquo;video: film, animation, etc.&rdquo;</li>
+</ul>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;administrative records data&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;census/enumeration data&quot;,
+    &quot;survey data&quot;,
+    &quot;video: film, animation, etc.&quot;
+]
+</code></pre>
+<h2 id="21-collection-notes-optional"><a name="collection_notes"></a>21. Collection Notes         [Optional]</h2>
+<p><strong>Description:</strong> A description of technical details and other characteristics of the data collection (such as unique authoring, discrepancies, dissemination, or processing information) that cannot be recorded in the other metadata fields but constitutes important information for the secondary data user.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Collection Notes should include any information that does not fit anywhere else in the metadata, such as: information about unique aspects of the way the data was processed, discrepancies between the metadata and documentation files, information about the research team, or series-specific notes.</p>
+<h3 id="211-items"><a name="autogenerated_heading_14"></a>21.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;Exchange rates are expressed in United States dollars per national currency unit or vice versa, and two rates are given for the special drawing right (SDR) value of the national currency unit.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Percentage distributions provided in the codebook were generated using full weights, which are not available on the public use files. Therefore, these results cannot be replicated using the public use files. The differences between results produced using the full weights and those produced using the sampling weights available on the public use files are estimated to be below 1 percent.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Information on the Index of Consumer Sentiment, the Index of Current Economic Conditions, and the Index of Consumer Expectations and how they were created can be found in the P.I. Codebook.&quot;,
+    &quot;Additional information on the Survey of Consumers can be found by visiting the Survey of Consumers Website.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;At PI request, dataset 1 should be attributed to Anura P. Jayasumana while datasets 2-6 should be attributed to Jytte Klausen. Please refer to the PI user guide for additional information.&quot;
+]
+</code></pre>
+<h2 id="22-study-purpose-optional"><a name="study_purpose"></a>22. Study Purpose         [Optional]</h2>
+<p><strong>Description:</strong> Describes the concept of the data collection in detail.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The Study Purpose provides more detailed information than the Summary field, including the data collection&rsquo;s objectives, intended achievements, and lists of questions it sought to answer. This field can also include historical or background information about the research project. As with the Summary, the text should be written in third person and avoid any commentary on the data collection&rsquo;s outcomes.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;The purpose of this study is to advance understanding of the barriers and enablers associated with colorectal cancer (CRC) screening among Somali men ages 50-74 in Minnesota.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The purpose of the study's qualitative phase is to explore veterans' experiences by identifying factors that they believe caused or contributed to their contact with the criminal justice system.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The purpose of the study was to explore the impact of interventions by Sexual Assault Nurse Examiners/Sexual Assault Response Teams (SANE/SART) on the judicial process. The goal of this study was to test the efficacy of SANE/SART programs as a tool in the criminal justice system. The American Prosecutors Research Institute and Boston College tested the hypotheses that SANE/SART exams increase arrest and prosecution rates. In testing this hypothesis, the project team sought to answer five primary research questions: (1) Is the arrest rate higher in cases where a SANE/SART exam is performed as compared with cases in which no exam is performed?, (2) Is the indictment/charging rate higher in such cases?, (3) Are guilty pleas more likely to be entered in such cases, and are pleas likely to be to the existing charge or to a lesser charge?, (4) Is the conviction rate higher in such cases?, and (5) Is the sentence more severe in such cases? In addition, the project team examined the participation of victims in the criminal justice process and the types of services that were offered them. As a large portion of SANE/SART programs focus on understanding victims' reactions to sexual assault and ensuring proper treatment to minimize the chance of further trauma, a central hypothesis to be tested was that improved case outcomes may be a result of increased participation by the victim in the identification, apprehension, and prosecution of the perpetrator. Moreover, the level of services offered and provided to victims, particularly those related to prosecution would likely affect case outcomes as well. Both the victim's participation in the criminal justice system and specifics of SANE/SART services, including evidence collection, were considered in determining the true impact of SANE/SART interventions on case outcomes.&quot;
+</code></pre>
+<h2 id="23-study-design-optional"><a name="study_design"></a>23. Study Design         [Optional]</h2>
+<p><strong>Description:</strong> Describes the procedures the researchers used to contact subjects and/or to collect the data.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The Study Design provides more detailed information than the Summary, including how surveys were prepared and administered, how interviews were conducted, or how the data were obtained and compiled, as well as information about deadlines and follow-ups to respondents.  </p>
+<p><strong>Curator Notes:</strong> It is acceptable to summarize information contained in study documentation and point users to that study documentation for more details.  </p>
+<p>If the Summary already contains text that would be appropriate in Study Design, it is acceptable to duplicate that text.  </p>
+<p><strong>Example:</strong> </p>
+<pre><code class="language-json">&quot;Data on organizational culture in each of the 12 courts (Part 1) were obtained by administering the Court Culture Assessment Instrument (CCAI) to all judges with a felony criminal court docket and to all senior court administrators. A total of 224 respondents completed the questionnaire. The CCAI was used to assess five key dimensions of current court culture orientation: (1) dominant case management style, (2) judicial and court staff relations, (3) change management, (4) courthouse leadership, and (5) internal organization. The determination of what culture judges and court administrators desired to establish in the near future was also obtained through the application of the same instrument (CACI) as practitioners were asked to indicate the type of culture in each work area (or content dimension) they would like to see in their court in the next five years. Additionally, surveys were conducted of prosecuting attorneys (Part 2) and public defender attorneys (Part 3) to gauge their views on how well the courts in which they practice achieve the goals of access, fairness, and managerial effectiveness. Every prosecutor and public defender with two years or more experience in representing the state or criminal defendants in felony cases was asked to complete a questionnaire probing their thoughts on how well their court acted to promote access to records through availability and staff cooperation, treating litigants, witnesses, jurors and others fairly, and demonstrating concern for the rights and interests of others in the criminal trial process, including attorney and victims. A total of 334 prosecuting attorneys and 260 public defense attorneys completed the 46-item trial court process survey.&quot;
+</code></pre>
+<h2 id="24-variable-description-optional"><a name="variable_description"></a>24. Variable Description         [Optional]</h2>
+<p><strong>Description:</strong> Significant variables that are present in the data files distributed for public release, particularly demographic variables.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The Variable Description provides more detailed information than the Summary, including a review of variables that are important for users to know about. The codebook, setup files, and variable groups are appropriate sources of information for Variable Description.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;The data includes variables about participants' and their parents' moods, interviewer observations, families' activities, families' health history, participants' school records, and parents' substance use. Demographic variables include race, religion, annual household income, and the participants' parents' employment statuses.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The LGBTQ Hate Crimes Interviews dataset contains more in-depth information, including victim demographic information, substance abuse history, information on whether the victim is open about their LGBTQ identification, the victim's job status, and information about how the victim reacted to the crime, such as whether or not they reported the crime to the police and their level of cooperation with the police and prosecution.&quot;
+</code></pre>
+<h2 id="25-sampling-optional"><a name="sampling"></a>25. Sampling         [Optional]</h2>
+<p><strong>Description:</strong> The methods used to select the cases that appear in the data collection (e.g., simple, systematic, stratified).</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The sample is a selection out of the universe of all possible relevant cases (e.g. adults in the United States, housing units in three counties of Michigan, etc.) that could have been included in the data collection. A detailed discussion of such things as sampling error or other limitations of the sampling methodology is not required here. Note that some studies, such as censuses, do not utilize samples but include all members of the universe. In such cases, &lsquo;inap.&rsquo; may be entered in Sampling to indicate it was not omitted in error.</p>
+<h3 id="251-items"><a name="autogenerated_heading_15"></a>25.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;National sample of telephone numbers from cell (RDD) sampling frame.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;The probability sample selected to represent the universe consists of approximately 71,000 households.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;The data collection is a pooled cross-sectional time-series of bank robberies in 50 states over a period of 6 years (1970-1975), resulting in 300 observations.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Three target groups were identified: lawyers 36 years of age and above who were members of the American Bar Association (ABA), all the remaining members of the ABA excluding law students, and all lawyers in the nonmember files kept by the ABA. A systematic random probability sample was drawn to represent each of the three groups. The group of young lawyers was oversampled.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;The original National Longitudinal Survey of Youth Children and Young Adults 1979 (NLSY79) was a multi-stage, stratified random national sample. Sampling weights are available in the public-use datasets to adjust for minority oversamples and year-to-year attrition. There are mother and child specific weights. Primary Sampling Units (PSUs) were counties and independent cities. PSUs were stratified prior to sampling based on 9 Census divisions and 2 urban/rural classes.&quot;,
+    &quot;The initial Panel Study of Income Dynamics (PSID) combined two independent samples: a cross-sectional, national sample (based on stratified multistage selection of the civilian noninstitutional population of the U.S.) and a national sample of low-income families. The cross-section sample was an equal probability sample of households in the 48 coterminous states designed to yield about 3,000 completed interviews. The second sample was selected from the Census Bureau's Survey of Economic Opportunity (SEO) using unequal selection probabilities. &quot;
+]
+</code></pre>
+<h2 id="26-time-method-optional"><a name="time_method"></a>26. Time Method         [Optional]</h2>
+<p><strong>Description:</strong> The time dimension in which the data were collected and framed.</p>
+<p><strong>Type</strong>: <code>array of enum (of string)</code></p>
+<p><strong>Controlled Vocabulary:</strong> DDI Controlled Vocabulary for Time Method <a href="https://ddialliance.org/Specification/DDI-CV/TimeMethod_1.2.html">(https://ddialliance.org/Specification/DDI-CV/TimeMethod_1.2.html)</a></p>
+<p><strong>Usage Notes:</strong>   </p>
+<table>
+<thead>
+<tr>
+<th><em>Option</em></th>
+<th><em>Description</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cross-sectional</td>
+<td>Data collected by observing subjects within the study period, without regard to changes over time. May include more than one collection event. Analysis of cross-sectional data often consists in comparing the differences and similarities among subjects.</td>
+</tr>
+<tr>
+<td>Cross-sectional ad-hoc follow-up</td>
+<td>Data collected at one point in time to complete information collected in a previous cross-sectional study; the decision to collect follow-up data was not included in the original study design.</td>
+</tr>
+<tr>
+<td>Longitudinal</td>
+<td>Data collected repeatedly over time to allow studying change in a population. At least some of the questions or modules are repeated over waves. Use the broad term when none of the subterms is suitable.</td>
+</tr>
+<tr>
+<td>Longitudinal: Cohort / Event-based</td>
+<td>Data collected over time from the same cohort of respondents. The individuals in the cohort are connected in some way or have shared some significant experience within a given period. In some cases, the samples may differ between waves but are drawn from the same cohort. Examples: birth year, disease (clinical trials), common problem (intervention studies), education, employment, family formation, participation in an event.</td>
+</tr>
+<tr>
+<td>Longitudinal: Panel</td>
+<td>Data collected over time from, or about, the same sample of respondents. Differs from cohort/event-based data in that the selection of respondents is not based on their being connected in some way or having shared some significant experience.</td>
+</tr>
+<tr>
+<td>Longitudinal: Panel: Continuous</td>
+<td>Data collected from a panel of respondents on a regular basis.</td>
+</tr>
+<tr>
+<td>Longitudinal: Panel: Interval</td>
+<td>Data collected from a panel of respondents only when information is needed.</td>
+</tr>
+<tr>
+<td>Longitudinal: Trend / Repeated Cross-section</td>
+<td>Data collected from different samples or different groups of people from the same population at several points in time, using at least partly the same set of questions/variables. Conclusions are drawn for the population. Examples: European Social Survey (ESS), national longitudinal crime surveys.</td>
+</tr>
+<tr>
+<td>Time Series</td>
+<td>Data collected repeatedly over time to study change in observations. These are typically &ldquo;objective&rdquo; measurements of phenomena that can be observed externally, as opposed to attitudes/opinions or feelings. Examples may include economic/financial indicators, natural/meteorological phenomena, vital statistics, etc.</td>
+</tr>
+<tr>
+<td>Time Series: Continuous</td>
+<td>Measurements are taken at every instant in time. Examples: lie detectors, electrocardiograms, etc.</td>
+</tr>
+<tr>
+<td>Time Series: Discrete</td>
+<td>Measurements are taken at (usually regularly) spaced intervals. Examples: macroeconomics (weekly share prices, monthly profits, sales); meteorology (hourly temperature); measurements of individuals (blood pressure, weight, height); sociology (crime figures, employment figures), etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="261-items"><a name="autogenerated_heading_16"></a>26.1. Items</h3>
+<p><strong>Type</strong>: <code>enum (of string)</code></p>
+<p>Must be one of:</p>
+<ul>
+<li>&ldquo;Cross-sectional&rdquo;</li>
+<li>&ldquo;Cross-sectional ad-hoc follow-up&rdquo;</li>
+<li>&ldquo;Longitudinal&rdquo;</li>
+<li>&ldquo;Longitudinal: Cohort / Event-based&rdquo;</li>
+<li>&ldquo;Longitudinal: Panel&rdquo;</li>
+<li>&ldquo;Longitudinal: Panel: Continuous&rdquo;</li>
+<li>&ldquo;Longitudinal: Panel: Interval&rdquo;</li>
+<li>&ldquo;Longitudinal: Trend / Repeated Cross-section&rdquo;</li>
+<li>&ldquo;Time Series&rdquo;</li>
+<li>&ldquo;Time Series: Continuous&rdquo;</li>
+<li>&ldquo;Time Series: Discrete&rdquo;</li>
+</ul>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;Cross-sectional&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Longitudinal: Cohort / Event-based&quot;,
+    &quot;Time Series&quot;
+]
+</code></pre>
+<h2 id="27-data-source-optional"><a name="data_source"></a>27. Data Source         [Optional]</h2>
+<p><strong>Description:</strong> The source(s) of the data collection, when that source is external to the data collection and can be independently cited.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Data Source includes such source entities as books, journal articles, administrative records, agency-sponsored surveys, or machine-readable files. Each source includes at minimum the title, author, publication year, and journal (if applicable). Any citation format is accepted.</p>
+<h3 id="271-items"><a name="autogenerated_heading_17"></a>27.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;'Voting Scores.' Congressional Quarterly Almanac 33 (1977), 487-498&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;United States Bureau of the Census Economic Surveys, 1998-2000&quot;,
+    &quot;United States Congressional Record, 1989&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Annual Company Organization Survey, 2003&quot;
+]
+</code></pre>
+<h2 id="28-collection-mode-optional"><a name="collection_mode"></a>28. Collection Mode         [Optional]</h2>
+<p><strong>Description:</strong> The method(s) used to collect the data.</p>
+<p><strong>Type</strong>: <code>array of enum (of string)</code></p>
+<h3 id="281-items"><a name="autogenerated_heading_18"></a>28.1. Items</h3>
+<p><strong>Type</strong>: <code>enum (of string)</code></p>
+<p>Must be one of:</p>
+<ul>
+<li>&ldquo;audio computer-assisted self interview (ACASI)&rdquo;</li>
+<li>&ldquo;audiovisual touch-screen computer-assisted self interview (AVT-CASI)&rdquo;</li>
+<li>&ldquo;coded on-site observation&rdquo;</li>
+<li>&ldquo;coded video observation&rdquo;</li>
+<li>&ldquo;cognitive assessment test&rdquo;</li>
+<li>&ldquo;computer-assisted personal interview (CAPI)&rdquo;</li>
+<li>&ldquo;computer-assisted self interview (CASI)&rdquo;</li>
+<li>&ldquo;computer-assisted telephone interview (CATI)&rdquo;</li>
+<li>&ldquo;face-to-face interview&rdquo;</li>
+<li>&ldquo;mail questionnaire&rdquo;</li>
+<li>&ldquo;mixed mode&rdquo;</li>
+<li>&ldquo;on-site questionnaire&rdquo;</li>
+<li>&ldquo;paper and pencil interview (PAPI)&rdquo;</li>
+<li>&ldquo;record abstracts&rdquo;</li>
+<li>&ldquo;remote sensing&rdquo;</li>
+<li>&ldquo;self-enumerated questionnaire&rdquo;</li>
+<li>&ldquo;telephone audio computer-assisted self interview (TACASI)&rdquo;</li>
+<li>&ldquo;telephone interview&rdquo;</li>
+<li>&ldquo;web scraping&rdquo;</li>
+<li>&ldquo;web-based survey&rdquo;</li>
+</ul>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;audio computer-assisted self interview (ACASI)&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;computer-assisted self interview (CASI)&quot;,
+    &quot;face-to-face interview&quot;
+]
+</code></pre>
+<h2 id="29-extent-of-processing-optional"><a name="extent_of_processing"></a>29. Extent of Processing         [Optional]</h2>
+<p><strong>Description:</strong> Describes processing activities and checks performed on data collections by ICPSR curation staff.</p>
+<p><strong>Type</strong>: <code>array of enum (of string)</code></p>
+<p><strong>Usage Notes:</strong>   </p>
+<table>
+<thead>
+<tr>
+<th><em>Option</em></th>
+<th><em>Description</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Checked for undocumented or out-of-date codes</td>
+<td>Selected if the ICPSR curator checked at least half of the variables in the data collection for wild codes and corrected or reported in the codebook any wild codes discovered by these checks.</td>
+</tr>
+<tr>
+<td>Created online analysis version with question text</td>
+<td>Selected if the ICPSR curator created online analysis version with question text.</td>
+</tr>
+<tr>
+<td>Created variable labels and/or value labels</td>
+<td>Selected if the ICPSR curator created variable labels and/or value labels.</td>
+</tr>
+<tr>
+<td>Performed consistency checks</td>
+<td>Selected if the ICPSR curator performed any of the following consistency checks on at least half of the variables in the data collection and corrected or reported in the codebook any inconsistencies discovered by these checks:<br> &nbsp; &nbsp;- Checked to see that skip patterns in questionnaires were followed correctly.  <br> &nbsp; &nbsp;- Checked the logical consistency of response patterns across variables.</td>
+</tr>
+<tr>
+<td>Performed recodes and/or calculated derived variables</td>
+<td>Selected if the ICPSR curator recoded at least one original variable in the data collection and/or produced at least one new variable derived from one or more original variables. The following kinds of recodes DO NOT qualify for this task:<br> &nbsp; &nbsp;- Recodes performed for reasons of confidentiality. This type of recoding may be mentioned in other sections of the metadata description, usually in Restrictions or Collection Notes.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by consistency checks.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by checks for undocumented codes.  <br> &nbsp; &nbsp;- Recodes performed by standardized missing data codes.  <br> &nbsp; &nbsp;- When a unique record identifier is created that is not derived from an original variable.</td>
+</tr>
+<tr>
+<td>Standardized missing values</td>
+<td>Selected if the ICPSR curator standardized missing values for at least half of the variables in the data collection. Standardization of missing values means that all &lsquo;missing&rsquo; responses are coded according to a fixed set of rules. There are various ways in which this standardization is typically applied. In some data collections, each kind of &lsquo;missing response&rsquo; may be assigned the same code across all variables, e.g., &lsquo;inapplicable&rsquo; cases may be coded -1 for all variables, &lsquo;don&rsquo;t know&rsquo; may be coded -2, and &lsquo;no answer&rsquo; may be coded -3. In other instances, standards may be specific to the type of variable involved, e.g., blanks may denote missing data for all alphabetic variables, codes -1, -2, and -3 may denote missing data for all dummy variables, and codes 7, 8, and 9 may represent missing data for all other variables. In yet other instances, standard codes may depend on the column width of each variable, e.g., 99 may denote &lsquo;no answer&rsquo; for all two column variables and 999 may denote the same for all three column variables.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="291-items"><a name="autogenerated_heading_19"></a>29.1. Items</h3>
+<p><strong>Type</strong>: <code>enum (of string)</code></p>
+<p>Must be one of:</p>
+<ul>
+<li>&ldquo;Checked for undocumented or out-of-date codes&rdquo;</li>
+<li>&ldquo;Created online analysis version with question text&rdquo;</li>
+<li>&ldquo;Created variable labels and/or value labels&rdquo;</li>
+<li>&ldquo;Performed consistency checks&rdquo;</li>
+<li>&ldquo;Performed recodes and/or calculated derived variables&rdquo;</li>
+<li>&ldquo;Standardized missing values&rdquo;</li>
+</ul>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;Created variable labels and/or value labels.&quot;,
+    &quot;Standardized missing values.&quot;,
+    &quot;Checked for undocumented or out-of-range codes.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Created online analysis version with question text.&quot;
+]
+</code></pre>
+<h2 id="30-weight-optional"><a name="weight"></a>30. Weight         [Optional]</h2>
+<p><strong>Description:</strong> A description of the criteria for using weights in the analysis of the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Weight includes any information about weighting variables in the data, as well as any other weight information provided by the PI. If a weighting formula or coefficient was developed, provide this formula, define its elements, and indicate how the formula is applied to the data. It is acceptable to summarize information contained in documentation and refer users to that documentation for more information.</p>
+<p><strong>Curator Notes:</strong> For NIJ studies, &lsquo;Not applicable.&rsquo; should be used if no information is available. For all other archives, this field is optional.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;A weight variable with two implied decimal places has been included and must be used in any analysis.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Both the TransPop and Cisgender datasets have the same variable named WEIGHT as the weighting variable. The combination datasets have a set of three weight variables (WEIGHT_TRANSPOP, WEIGHT_CISGENDER, WEIGHT_CISGENDER_TRANSPOP). The results will be representative of the sample when the weight is applied. Pages 41 and 42 of the user guide contain instructions that detail how to apply the final sample weight using Stata or SPSS.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The 1996 NES dataset includes two final person-level analysis weights which incorporate sampling, nonresponse, and post-stratification factors. One weight (variable #4) is for longitudinal micro-level analysis using the 1996 NES Panel. The other weight (variable #3) is for analysis of the 1996 NES combined sample (Panel component cases plus Cross-section supplement cases). In addition, a Time Series Weight (variable #5) which corrects for Panel attrition was constructed. This weight should be used in analyses which compare the 1996 NES to earlier unweighted National Election Study data collections.&quot;
+</code></pre>
+<h2 id="31-response-rates-optional"><a name="response_rates"></a>31. Response Rates         [Optional]</h2>
+<p><strong>Description:</strong> The percentage of respondents in the sample who participated in the data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Only applicable if the data were collected with a survey instrument and the response rates are provided.</p>
+<p><strong>Curator Notes:</strong> For National Archive of Criminal Justice Data (NACJD) studies, the phrase &lsquo;Not available&rsquo; is used when no information is available and the phrase &lsquo;Not applicable&rsquo; is used if Response Rates does not apply.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;The overall response rate for this survey was 20.22%; 72.6% for existing panelists and 10.4% for new panelists, using AAPOR Response Rate 1.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The response rate for the pre-election interview was 55.8 percent (66.5 percent for the Panel and 35.2 percent for the Fresh Cross). The response rate for the post-election interview was 89.1 (90.1 percent for the Panel and 85.2 percent for the Fresh Cross).&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Not applicable.&quot;
+</code></pre>
+<h2 id="32-scales-optional"><a name="scales"></a>32. Scales         [Optional]</h2>
+<p><strong>Description:</strong> Any commonly known scales used to collect data for the data collection (e.g., psychological scales such as MMPI and CPI, or occupational scales such as the Census Occupational Codes).</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> The inclusion of a common scale should be identified in the documentation associated with this dataset and confirmed by variable names or labels.    </p>
+<p>The scales can be cited either as a list or described in full sentences.   </p>
+<p>If the questionnaire used has a finite list of responses (e.g., &lsquo;Always, Sometimes, Rarely, Never&rsquo; or Strongly Agree, Agree, Disagree, Strongly Disagree&rsquo;), it is acceptable for this field to note &lsquo;A Likert-type scale was used,&rsquo; or &lsquo;Several Likert-type scales were used.&rsquo; However, especially in situations where only Likert-type Scales were used, it is not required.  </p>
+<p><strong>Curator Notes:</strong> For NIJ studies, if there is no indication that scales are used, enter &lsquo;None&rsquo; in this field. For all other archives, this field is optional.</p>
+<h3 id="321-items"><a name="autogenerated_heading_20"></a>32.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;The baseline data collection included one scale - the CES-D index for maternal depression [Cole, J. C., Rabin, A. S., Smith, T. L., and Kaufman, A. S. (2004). Development and validation of a Rasch-derived CES-D short form. Psychological assessment, 16(4), 360]. All scales used for outcomes at ages 1 through 3 are listed in Appendix Tables 1 and 2 in the User Guide. Please refer to the User Guide and P.I. Codebook, available under the 'Data and Documentation' tab, for details.&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Squires, J., Bricker, D. D., and Twombly, E. (2009). Ages and stages questionnaires. Baltimore, MD: Paul H. Brookes.&quot;,
+    &quot;Briggs-Gowan, M. J., Carter, A. S., Irwin, J. R., Wachtel, K., and Cicchetti, D. V. (2004). The Brief Infant-Toddler Social and Emotional Assessment: screening for social-emotional problems and delays in competence. Journal of pediatric psychology, 29(2), 143-155.&quot;,
+    &quot;Yu, L., Buysse, D. J., Germain, A., Moul, D. E., Stover, A., Dodds, N. E., ... and Pilkonis, P. A. (2012). Development of short forms from the PROMIS sleep disturbance and sleep-related impairment item banks. Behavioral sleep medicine, 10(1), 6-24.&quot;
+]
+</code></pre>
+<h2 id="33-units-of-observation-optional"><a name="units_of_observation"></a>33. Units of Observation         [Optional]</h2>
+<p><strong>Description:</strong> Describes the entity being analyzed in the data collection; otherwise known as analysis unit.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Usage Notes:</strong> Use a brief phrase, for example: &lsquo;Individual,&rsquo; &lsquo;Family,&rsquo; &lsquo;Household,&rsquo; or &lsquo;Organization&rsquo;. The DDI controlled vocabulary for Analysis Unit (<a href="https://vocabularies.cessda.eu/vocabulary/AnalysisUnit?v=2.1.3&amp;lang=en">https://vocabularies.cessda.eu/vocabulary/AnalysisUnit?v=2.1.3&amp;lang=en</a>) should be consulted for possible values.</p>
+<h3 id="331-items"><a name="autogenerated_heading_21"></a>33.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;Organization&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Individual, Household&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Family&quot;
+]
+</code></pre>
+<h2 id="34-geographic-unit-optional"><a name="geographic_unit"></a>34. Geographic Unit         [Optional]</h2>
+<p><strong>Description:</strong> The smallest geographic unit used in the dataset.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Geographic Unit is intended to represent specific, known geography &ndash; e.g., county, census district, FIPS code, electoral district, and any other conveyor of specific geography that is represented by a variable.  </p>
+<p>If the data do not include a geographic variable by which the data can be analyzed, this field is not indicated. If all the cases are from a single state, but the cases are not subdivided geographically within that state, then &lsquo;state&rsquo; is not indicated.  </p>
+<p>This field is only meant to convey specific, known, geography. If there is a variable indicating which testing site a survey was taken at, but the locations of the testing sites were masked by the PI, this field is likely not indicated.  </p>
+<p><strong>Curator Notes:</strong> For NIJ studies, enter &lsquo;None&rsquo; if no geographic variables are present. For all other archives, this field is optional.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;state&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Census tract&quot;
+</code></pre>
+<pre><code class="language-json">&quot;precinct&quot;
+</code></pre>
+<h2 id="35-restrictions-optional"><a name="restrictions"></a>35. Restrictions         [Optional]</h2>
+<p><strong>Description:</strong> Information regarding any limitations on use or restrictions on access to the file(s).</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Restrictions informs users that access to certain variables in a collection may be limited, and that they should contact ICPSR directly to inquire about accessing them.</p>
+<p><strong>Example:</strong> </p>
+<pre><code class="language-json">&quot;These data may not be used for any purpose other than statistical reporting and analysis. Use of these data to learn the identity of any person or establishment is strictly prohibited. To protect respondent privacy, certain files within this data collection are restricted from general dissemination. To obtain these files, researchers must agree to the terms and conditions of a Restricted Data Use Agreement in accordance with existing ICPSR servicing policies.&quot;
+</code></pre>
+<h2 id="36-changes-to-collection-optional"><a name="changes_to_collection"></a>36. Changes to Collection         [Optional]</h2>
+<p><strong>Description:</strong> A summary description of changes that have been made to the data collection since its last release.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<p><strong>Usage Notes:</strong> Textual changes are recorded only when data or documentation files are updated or added to the data collection (and the Version number is incremented).</p>
+<h3 id="361-items"><a name="autogenerated_heading_22"></a>36.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(O) <a href="#changes_to_collection_items_date">Date</a></td>
+<td>string</td>
+<td>The date on which an update occurred</td>
+</tr>
+<tr>
+<td>(O) <a href="#changes_to_collection_items_note">Note</a></td>
+<td>string</td>
+<td>An explanation of the nature of the update.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3611-date"><a name="changes_to_collection_items_date"></a>36.1.1. Date</h4>
+<p><strong>Description:</strong> The date on which an update occurred</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Format</strong>: <code>date</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;2006-03-30&quot;
+</code></pre>
+<pre><code class="language-json">&quot;2019-05-05&quot;
+</code></pre>
+<h4 id="3612-note"><a name="changes_to_collection_items_note"></a>36.1.2. Note</h4>
+<p><strong>Description:</strong> An explanation of the nature of the update.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;File CB3025.ALL.PDF was removed from any previous datasets and flagged as a study-level file, so that it will accompany all downloads.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The data producer provided additional data files.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;SAS and SPSS setup files were created.&quot;
+</code></pre>
+<pre><code class="language-json">&quot;The codebook descriptions of variables TANSUP, EMOSUP, and SOCSUP were corrected.&quot;
+</code></pre>
+<p><strong>Example:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;date&quot;: &quot;2003-09-10&quot;,
+        &quot;note&quot;: &quot;A variable specifying the date of interview has been added to the collection.&quot;
+    },
+    {
+        &quot;date&quot;: &quot;2003-12-09&quot;,
+        &quot;note&quot;: &quot;The codebook descriptions of variables TANSUP, EMOSUP, and SOCSUP were corrected.&quot;
+    }
+]
+</code></pre>
+<h2 id="37-series-optional"><a name="series"></a>37. Series         [Optional]</h2>
+<p><strong>Description:</strong> An ICPSR series is a named collection of related studies.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> ICPSR Series (<a href="https://www.icpsr.umich.edu/web/ICPSR/search/series">https://www.icpsr.umich.edu/web/ICPSR/search/series</a>)</p>
+<p><strong>Usage Notes:</strong> Typically the studies in an ICPSR series are produced by the same group of investigators, and either explore different facets of the same topic, or repeat the same investigation over time. Each series name is given in title case (all major words are capitalized, while minor words are lowercased) and ends with the word &lsquo;Series&rsquo;.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;American National Election Study (ANES) Series&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Census of Population and Housing, 1990 [United States] Series&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;National Black Election Study Series&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;Study of Women's Health Across the Nation (SWAN) Series&quot;
+]
+</code></pre>
+<h2 id="38-classifications-optional"><a name="classifications"></a>38. Classifications         [Optional]</h2>
+<p><strong>Description:</strong> ICPSR classifications address topics broadly, and are meant to be a good starting point for exploring the collection.</p>
+<p><strong>Type</strong>: <code>array of string</code></p>
+<p><strong>Controlled Vocabulary:</strong> ICPSR Topic Classifications (<a href="https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html">https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html</a>)</p>
+<p><strong>Usage Notes:</strong> When there are multiple subclassifications, the smallest (most detailed) one is chosen to represent the data collection.</p>
+<h3 id="381-items"><a name="autogenerated_heading_23"></a>38.1. Items</h3>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    &quot;I.A.2. Census Enumerations: Historical and Contemporary Population Characteristics, United States, American Housing Survey Series&quot;
+]
+</code></pre>
+<pre><code class="language-json">[
+    &quot;XVII.C.1. Social Institutions and Behavior, Socialization, Students, and Youth, United States&quot;
+]
+</code></pre>
+<h2 id="39-filesets-optional"><a name="filesets"></a>39. Filesets         [Optional]</h2>
+<p><strong>Description:</strong>  Identifies the grouping of files in a data collection. Every ICPSR data collection with at least one file must have at least one defined Fileset.</p>
+<p><strong>Type</strong>: <code>array of object</code></p>
+<p><strong>Usage Notes:</strong> Filesets are used at ICPSR to make a convenient package for description, discovery, preservation and dissemination &ndash; a package that is smaller than the data collection but larger than the individual file. A fileset typically contains a single file of statistical data plus additional files that support the data &ndash; such as setups for statistical software, documentation, and alternative data representations. A data collection may have multiple filesets. Each Fileset has a Number, and may also have a Name and an SDA (Survey Documentation and Analysis) Note.</p>
+<h3 id="391-items"><a name="autogenerated_heading_24"></a>39.1. Items</h3>
+<p><strong>Type</strong>: <code>object</code></p>
+<p><strong>Additional Properties</strong>: Not Allowed</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(R) <a href="#filesets_items_number">Number</a></td>
+<td>integer</td>
+<td>A number that uniquely identifies a &lsquo;part&rsquo; or component file that is associated with the data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#filesets_items_name">Name</a></td>
+<td>string</td>
+<td>A brief title used to distinguish each fileset within a data collection.</td>
+</tr>
+<tr>
+<td>(O) <a href="#filesets_items_sda_note">SDA Note</a></td>
+<td>string</td>
+<td>Additional information about the fileset for the purpose of helping online analysis users.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3911-number"><a name="filesets_items_number"></a>39.1.1. Number</h4>
+<p><strong>Description:</strong> A number that uniquely identifies a &lsquo;part&rsquo; or component file that is associated with the data collection.</p>
+<p><strong>Type</strong>: <code>integer</code></p>
+<p><strong>Usage Notes:</strong> Fileset numbers are typically (but not always) consecutive integers beginning with 1. (In some cases, the number may be drawn from an external resource, such as FIPS state and county codes.) The numbers correspond to the &lsquo;part numbers&rsquo; embedded in ICPSR standard filenames.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">1
+</code></pre>
+<pre><code class="language-json">2
+</code></pre>
+<pre><code class="language-json">3
+</code></pre>
+<h4 id="3912-name"><a name="filesets_items_name"></a>39.1.2. Name</h4>
+<p><strong>Description:</strong> A brief title used to distinguish each fileset within a data collection.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Usage Notes:</strong> Fileset Names are required for data collections that include multiple Filesets. If a data collection includes only one fileset, a Fileset Name is not included. Fileset Names use title case (all main words are capitalized) and do not begin with articles (a, the) or dates.</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">&quot;Each Region, Wealth Summary: Middle Colonies (MIDLCOL)&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Each Region, Wealth Summary: New England (NEWENGL)&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Northbound Public-Use Data&quot;
+</code></pre>
+<pre><code class="language-json">&quot;Northbound Restricted-Use Data&quot;
+</code></pre>
+<h4 id="3913-sda-note"><a name="filesets_items_sda_note"></a>39.1.3. SDA Note</h4>
+<p><strong>Description:</strong> Additional information about the fileset for the purpose of helping online analysis users.</p>
+<p><strong>Type</strong>: <code>string</code></p>
+<p><strong>Controlled Vocabulary:</strong> N/A</p>
+<p><strong>Examples:</strong> </p>
+<pre><code class="language-json">[
+    {
+        &quot;number&quot;: 1
+    }
+]
+</code></pre>
+<pre><code class="language-json">[
+    {
+        &quot;number&quot;: 1,
+        &quot;name&quot;: &quot;Northbound Public-Use Data&quot;
+    },
+    {
+        &quot;number&quot;: 2,
+        &quot;name&quot;: &quot;Northbound Restricted-Use Data&quot;
+    }
+]
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

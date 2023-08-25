@@ -1,0 +1,10 @@
+---
+  $schema: https://json-schema.org/draft-07/schema#
+  $id: https://schemas.icpsr.umich.edu/schema/yaml/geographic_unit?version=v1
+  usageNotes: |
+    Geographic Unit is intended to represent specific, known geography -- e.g., county, census district, FIPS code, electoral district, and any other conveyor of specific geography that is represented by a variable.
+
+    If the data do not include a geographic variable by which the data can be analyzed, this field is not indicated. If all the cases are from a single state, but the cases are not subdivided geographically within that state, then 'state' is not indicated.
+
+    This field is only meant to convey specific, known, geography. If there is a variable indicating which testing site a survey was taken at, but the locations of the testing sites were masked by the PI, this field is likely not indicated.
+

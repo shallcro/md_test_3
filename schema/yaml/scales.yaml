@@ -1,0 +1,9 @@
+---
+  $schema: https://json-schema.org/draft-07/schema#
+  $id: https://schemas.icpsr.umich.edu/schema/yaml/scales?version=v1
+  usageNotes: |
+    The inclusion of a common scale should be identified in the documentation associated with this dataset and confirmed by variable names or labels.  
+
+    The scales can be cited either as a list or described in full sentences. 
+
+    If the questionnaire used has a finite list of responses (e.g., 'Always, Sometimes, Rarely, Never' or Strongly Agree, Agree, Disagree, Strongly Disagree'), it is acceptable for this field to note 'A Likert-type scale was used,' or 'Several Likert-type scales were used.' However, especially in situations where only Likert-type Scales were used, it is not required.

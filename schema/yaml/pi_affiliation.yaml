@@ -1,0 +1,19 @@
+---
+  $schema: https://json-schema.org/draft-07/schema#
+  $id: https://schemas.icpsr.umich.edu/schema/yaml/pi_affiliation?version=v1
+  usageNotes: |+
+    The authority control for organizational names is the [Virtual International Authority File, or VIAF](https://viaf.org/), which links the various national authority files (that is, catalogs of authoritative names such as the [Library of Congress Name Authority File](https://authorities.loc.gov/)) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.
+    
+    For names of organizations:
+      
+      * If an organizational affiliation for a person is not know, 'Unknown' is listed in that principal investigator's (PI's) Organization.
+
+      * If the list of PIs includes multiple people affiliated with the same organization, that organization is repeated for each person.
+
+      * For organizational PIs, the higher level of an organization should be listed before the lower level, and levels should be separated by a period (e.g.,'University of Michigan. College of Literature, Science, and the Arts'). There is no period following the last level listed.
+
+      * Abbreviations are discouraged, except 'Inc.' and 'Co.' In particular, governmental PI's are spelled out completely (e.g., 'United States Department of Commerce' rather than 'U.S. Dept. of Commerce').
+
+      * 'The' is not included at the start of an organization name unless it is actually part of the official name (e.g., 'The New York Times' but not 'The National Institute of Justice').
+
+    For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.
