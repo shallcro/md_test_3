@@ -197,7 +197,7 @@ def main():
         subprocess.run(cmd, shell=True)
 
         #add improved CSS
-        shutil.copy(rtd_css, os.path.join(docs_dir, 'html', 'css', 'theme.css'))
+        shutil.copy(rtd_css, os.path.join(site_dir, 'css', 'theme.css'))
             
         #remove temp folder
         print("\n\nRemoving temp folder...")
