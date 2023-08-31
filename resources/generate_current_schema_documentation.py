@@ -120,7 +120,7 @@ def main():
 
         #set up variables
         site_dir = os.path.join(args.source_dir, 'site')
-        schema_schema_markdown_dir = os.path.join(args.source_dir, 'markdown', 'schema')
+        schema_markdown_dir = os.path.join(args.source_dir, 'markdown', 'schema')
         resource_dir = os.path.join(args.source_dir, 'resources')
         temp_dir = os.path.join(args.source_dir, 'temp')
         mkdocs_yml = os.path.join(resource_dir, 'mkdocs.yml')
