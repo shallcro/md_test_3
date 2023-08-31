@@ -91,14 +91,9 @@ def persist_cache(cache, temp_dir):
     """ Persist cache to temp_dir """
     for key, schema in cache.items():
         if (title := schema.get('title')) is not None:
-            try:
-                version = parse_qs(urlparse(key).query)['version'][0]
-            except:
-                version = 1
-
             # path_components = urlparse(key).path.split('/')
             # file_path = os.path.join(*path_components[1:]) # Remove first element, which is the base URI template
-            file_name = os.path.join(temp_dir, f'icpsr_study_schema_{version}.json')
+            file_name = os.path.join(temp_dir, 'icpsr_study_schema.json')
             os.makedirs(os.path.dirname(file_name), exist_ok=True)
 
             log.debug(f"Writing {title} schema to {file_name}")
@@ -124,17 +119,17 @@ def main():
             sys.exit(1)
 
         #set up variables
-        docs_dir = os.path.join(args.source_dir, 'docs')
-        html_dir = os.path.join(docs_dir, 'html')
+        site_dir = os.path.join(args.source_dir, 'site')
+        schema_schema_markdown_dir = os.path.join(args.source_dir, 'markdown', 'schema')
+        resource_dir = os.path.join(args.source_dir, 'resources')
         temp_dir = os.path.join(args.source_dir, 'temp')
-        if not os.path.exists(temp_dir):
-            os.mkdir(temp_dir)
-
-        mkdocs_yaml = os.path.join(docs_dir, 'mkdocs.yaml')
-        rtd_css = os.path.join(docs_dir, 'readthedocs_theme.css')
-
-        markdown_dir = os.path.join(docs_dir, 'markdown')
-
+        mkdocs.yml = os.path.join(resource_dir, 'mkdocs.yml')
+        rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
+        
+        for folder in [temp_dir, site_dir]:
+            if not os.path.exists(folder):
+                os.mkdir(folder)
+        
         #produce a dereferenced json file
         print("\tProducing cache...")
         cache = dereference_cache(load_cache(args.source_dir))
@@ -159,13 +154,13 @@ def main():
         #generate markdown using modified version of JSON Schema for Humans
         print("\tCreating markdown...")
         md_filename = os.path.basename(os.path.splitext(dereferenced_file)[0])
-        md_file = os.path.join(markdown_dir, f"{md_filename}.md")
+        md_file = os.path.join(schema_markdown_dir, f"{md_filename}.md")
 
-        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(docs_dir, 'template', 'base.md'), dereferenced_file, md_file)
+        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(resource_dir, 'template', 'base.md'), dereferenced_file, md_file)
 
         subprocess.run(cmd, shell=True, text=True)
 
-        #now fix labels and update markdown publication date
+        #now read in all our schema markdown to make final improvements 
         print("\tFixing labels...")
         with open(md_file, 'r', encoding='utf-8') as fi:
             content=fi.readlines()
@@ -197,54 +192,12 @@ def main():
                 else:
                     fo.write(line)
 
-        #generate html; first set up mkdocs.yaml file
-        mkdocs_info = ["site_name: ICPSR Curated Study Metadata Schema\n",
-            f"docs_dir: markdown\n",
-            f"site_dir: html\n",
-            "markdown_extensions:\n",
-            "  - tables\n",
-            "  - markdown.extensions.smarty\n",
-            "plugins: []\n",
-            "theme:\n",
-            "  name: readthedocs\n",
-            "  prev_next_buttons_location: none\n"
-        ]
-
-        #write info to file
-        with open(mkdocs_yaml, 'w', encoding='utf-8') as fo:
-            for line in mkdocs_info:
-                fo.write(line)
-
-        #use docs_dir as current working directory
-        os.chdir(docs_dir)
-
-        #run mkdocs
-        cmd = 'mkdocs build --verbose'
+        #generate html; run mkdocs
+        cmd = f'mkdocs build -f {mkdocs.yml} --clean --verbose'
         subprocess.run(cmd, shell=True)
 
         #add improved CSS
         shutil.copy(rtd_css, os.path.join(docs_dir, 'html', 'css', 'theme.css'))
-
-        # #fix missing anchor tags
-        # html_files = glob(os.path.join(html_dir, '**', '*.html'), recursive=True)
-
-        # for html_file in html_files:
-        #     with open(html_file, 'r', encoding='utf-8') as fi:
-        #         html_content = fi.readlines()
-
-        #     with open (html_file, 'w', encoding='utf-8') as fo:
-        #         for line in html_content:
-        #             if '<a name' in line and '</h2>' in line and '</a>' not in line:
-        #                 line = line.replace('</h2>', '</a></h2>')
-        #             elif '<a name' in line and '</h3>' in line and '</a>' not in line:
-        #                 line = line.replace('</h3>', '</a></h3>')
-        #             elif '<a name' in line and '</h4>' in line and '</a>' not in line:
-        #                 line = line.replace('</h4>', '</a></h4>')
-        #             elif '<a name' in line and '</h5>' in line and '</a>' not in line:
-        #                 line = line.replace('</h5>', '</a></h5>')
-        #             elif '<p><strong>Additional properties</strong>: <a href="#" title="Additional Properties not allowed.">[Not allowed]</a></p>' in line:
-        #                 line = '<p><strong>Additional properties</strong>: [Not allowed]</p>\n'
-        #             fo.write(line)
             
         #remove temp folder
         print("\n\nRemoving temp folder...")
