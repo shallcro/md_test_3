@@ -123,7 +123,7 @@ def main():
         schema_schema_markdown_dir = os.path.join(args.source_dir, 'markdown', 'schema')
         resource_dir = os.path.join(args.source_dir, 'resources')
         temp_dir = os.path.join(args.source_dir, 'temp')
-        mkdocs.yml = os.path.join(resource_dir, 'mkdocs.yml')
+        mkdocs_yml = os.path.join(resource_dir, 'mkdocs.yml')
         rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
         
         for folder in [temp_dir, site_dir]:
@@ -193,11 +193,7 @@ def main():
                     fo.write(line)
 
         #generate html; run mkdocs
-        print("Trying to run mkdocs")
-        cmd = "which mkdocs"
-        subprocess.run(cmd, shell=True)
-
-        cmd = 'mkdocs build -f {} --clean --verbose'.format(mkdocs.yml)
+        cmd = 'mkdocs build -f {} --clean --verbose'.format(mkdocs_yml)
         subprocess.run(cmd, shell=True)
 
         #add improved CSS
