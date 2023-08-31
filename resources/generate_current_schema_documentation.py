@@ -193,7 +193,11 @@ def main():
                     fo.write(line)
 
         #generate html; run mkdocs
-        cmd = f'mkdocs build -f {mkdocs.yml} --clean --verbose'
+        print("Trying to run mkdocs")
+        cmd = "which mkdocs"
+        subprocess.run(cmd, shell=True)
+
+        cmd = 'mkdocs build -f {} --clean --verbose'.format(mkdocs.yml)
         subprocess.run(cmd, shell=True)
 
         #add improved CSS
