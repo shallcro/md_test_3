@@ -1,11 +1,12 @@
 site_name: TEST Metadata Info
 site_url: https://shallcro.github.io/md_test_3/
-docs_dir: markdown
-site_dir: site
+docs_dir: ../markdown
+site_dir: ../site
 nav:
   - Home: index.md
-  - Schema: schema/TEST_study_schema_v1.md
+  - Schema: schema/icpsr_study_schema.md
   - Style Guide: style/style_guide.md
+  - Version History: changes/changes.md
 
 theme:
   name: readthedocs
