@@ -126,9 +126,9 @@ def main():
         mkdocs_yml = os.path.join(resource_dir, 'mkdocs.yml')
         rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
         
-        for folder in [temp_dir, site_dir]:
+        for folder in [temp_dir, site_dir, schema_markdown_dir]:
             if not os.path.exists(folder):
-                os.mkdir(folder)
+                os.makedirs(folder)
         
         #produce a dereferenced json file
         print("\tProducing cache...")
