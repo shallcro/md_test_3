@@ -26,7 +26,7 @@ jobs:
 
     - name: Generate Schema Documentation
       run: |
-        python scripts/generate_current_schema_documentation.py --source-dir $GITHUB_WORKSPACE
+        python resources/generate_current_schema_documentation.py --source-dir $GITHUB_WORKSPACE
 
     - name: Commit and push changes
       run: |
