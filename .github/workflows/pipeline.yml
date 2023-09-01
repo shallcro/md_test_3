@@ -1,4 +1,4 @@
-name: Generate Schema Documentation and Merge
+name: Generate and Publish ICPSR Schema Documentation
 
 on:
   pull_request:

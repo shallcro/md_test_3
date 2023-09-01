@@ -205,7 +205,6 @@ def main():
         print("\nAll done!")
 
 
-
     except Exception as ex: # pylint: disable=broad-except
         log.error(ex)
         sys.exit(1)
